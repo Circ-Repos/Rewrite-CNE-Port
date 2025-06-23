@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<character holdTime="6.1" x="-50" icon="lord_x-dark-icon" sprite="characters/Lordxi" camx="-50" scale="1" color="#3C3C50">
+	<anim loop="true" x="40" y="60" fps="30" anim="Lordxi idle" name="idle"/>
+	<anim x="40" y="60" fps="30" anim="Lordxi left" name="singLEFT"/>
+	<anim x="40" y="60" fps="30" anim="Lordxi down" name="singDOWN"/>
+	<anim x="40" y="60" fps="30" anim="Lordxi right" name="singRIGHT"/>
+	<anim x="40" y="60" fps="30" anim="Lordxi up" name="singUP"/>
+	<anim x="40" y="60" fps="30" anim="Lordxi laugh" name="laugh"/>
+</character>

@@ -1,0 +1,171 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": true,
+			"fps": 30,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				-275,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "ringCollect",
+			"indices": [],
+			"name": "0_"
+		},
+		{
+			"offsets": [
+				-31,
+				-372
+			],
+			"loop": false,
+			"fps": 33,
+			"anim": "transform",
+			"indices": [],
+			"name": "transition"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-275,
+				-335
+			],
+			"anim": "exeswap",
+			"fps": 30,
+			"name": "swap",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": true,
+			"fps": 30,
+			"anim": "lalala",
+			"indices": [],
+			"name": "lalala"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": true,
+			"fps": 30,
+			"anim": "ring",
+			"indices": [],
+			"name": "ring"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "urTheOne",
+			"fps": 30,
+			"name": "urTheOne",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [
+				0,
+				0
+			],
+			"fps": 30,
+			"anim": "shootIdle",
+			"loop": true,
+			"name": "shoot0"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "shoot",
+			"loop": false,
+			"name": "shoot0"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/sonicWurugashikai",
+	"position": [
+		90,
+		90
+	],
+	"healthicon": "sonic-icon",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		255
+	],
+	"camera_position": [
+		-320,
+		140
+	],
+	"sing_duration": 2.7,
+	"scale": 3,
+	"_editor_isPlayer": false
+}

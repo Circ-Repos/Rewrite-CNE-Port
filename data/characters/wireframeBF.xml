@@ -1,0 +1,13 @@
+<!DOCTYPE codename-engine-character>
+<character x="540" icon="bf-model-icon" camx="-150" y="360" scale="1.4" isPlayer="true" camy="120" color="#0074FF" flipX="true" antialiasing="false" holdTime="3" sprite="characters/wireframeBF">
+	<anim x="-50" y="-50" fps="30" anim="miss" name="singDOWNmiss"/>
+	<anim x="-50" y="-50" fps="30" anim="miss" name="singLEFTmiss"/>
+	<anim x="-50" y="-50" fps="30" anim="miss" name="singRIGHTmiss"/>
+	<anim x="-50" y="-50" fps="30" anim="miss" name="singUPmiss"/>
+	<anim x="-50" y="-50" fps="30" anim="idle" name="idle"/>
+	<anim x="-50" y="-50" fps="30" anim="yeah" name="yeah"/>
+	<anim x="-50" y="-50" fps="30" anim="down" name="singDOWN"/>
+	<anim x="-50" y="-50" fps="30" anim="up" name="singUP"/>
+	<anim x="-50" y="-50" fps="30" anim="left" name="singLEFT"/>
+	<anim x="-50" y="-50" fps="30" anim="right" name="singRIGHT"/>
+</character>

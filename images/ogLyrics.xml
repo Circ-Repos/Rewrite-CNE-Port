@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="ogLyrics.png" width="1633" height="1390">
+	<SubTexture name="1let" x="1335" y="740" width="48" height="25" frameX="-29" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="2your" x="1240" y="639" width="92" height="113" frameX="-11" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="3spi" x="1182" y="994" width="92" height="186" frameX="-11" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="4spirit" x="1517" y="590" width="92" height="186" frameX="-11" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="5leave" x="839" y="1" width="405" height="198" frameX="-11" frameY="-16" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="6your" x="421" y="198" width="414" height="198" frameX="-11" frameY="-16" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="7bo" x="1" y="595" width="414" height="210" frameX="-11" frameY="-16" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="8body" x="418" y="595" width="414" height="210" frameX="-11" frameY="-16" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="9i" x="1240" y="755" width="7" height="18" frameX="-53" frameY="-30" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="10am" x="1312" y="861" width="44" height="99" frameX="-32" frameY="-30" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="11god" x="1548" y="779" width="69" height="182" frameX="-22" frameY="-30" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="12and" x="1243" y="202" width="374" height="184" frameX="-22" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="13youre" x="838" y="202" width="402" height="184" frameX="-22" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="14no" x="838" y="389" width="402" height="187" frameX="-22" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="15nobo" x="835" y="579" width="402" height="187" frameX="-22" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="16nobody" x="417" y="808" width="405" height="187" frameX="-22" frameY="-28" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="17i" x="1305" y="618" width="18" height="18" frameX="-47" frameY="-31" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="18will" x="1392" y="752" width="77" height="106" frameX="-21" frameY="-31" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="19take" x="1548" y="964" width="84" height="181" frameX="-14" frameY="-31" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="20you" x="1" y="1200" width="388" height="189" frameX="-14" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="21to" x="392" y="1200" width="388" height="189" frameX="-14" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="22my" x="419" y="403" width="409" height="189" frameX="-14" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="23world" x="1" y="808" width="413" height="197" frameX="-14" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="24then" x="1240" y="618" width="62" height="18" frameX="-25" frameY="-29" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="25ill" x="1359" y="861" width="65" height="95" frameX="-25" frameY="-29" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="26leave" x="1220" y="779" width="89" height="184" frameX="-11" frameY="-29" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="27you" x="783" y="1194" width="386" height="189" frameX="-11" frameY="-24" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="28with" x="790" y="998" width="389" height="189" frameX="-11" frameY="-24" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="29out" x="1" y="403" width="415" height="189" frameX="-11" frameY="-24" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="30word" x="421" y="1" width="415" height="194" frameX="-11" frameY="-24" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="31hide" x="1335" y="719" width="54" height="18" frameX="-29" frameY="-32" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="32and" x="1335" y="618" width="54" height="98" frameX="-29" frameY="-32" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="33seek" x="1548" y="1148" width="64" height="178" frameX="-24" frameY="-32" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="34cant" x="396" y="1008" width="391" height="183" frameX="-24" frameY="-27" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="35you" x="825" y="808" width="392" height="183" frameX="-24" frameY="-27" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="36see" x="1" y="1008" width="392" height="189" frameX="-24" frameY="-27" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="37youre" x="1109" y="769" width="92" height="36" frameX="-11" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="38the" x="1392" y="639" width="92" height="110" frameX="-11" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="39one" x="1517" y="389" width="93" height="198" frameX="-10" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="40im" x="1172" y="1190" width="373" height="198" frameX="-10" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="41look" x="1247" y="1" width="385" height="198" frameX="-10" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="42looking" x="1" y="1" width="417" height="198" frameX="-10" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="43for" x="1" y="202" width="417" height="198" frameX="-10" frameY="-22" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="44through" x="1392" y="618" width="116" height="18" frameX="-155" frameY="-96" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="45the" x="1220" y="966" width="169" height="18" frameX="-129" frameY="-96" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="46screen" x="835" y="769" width="271" height="18" frameX="-79" frameY="-96" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="47i" x="1243" y="389" width="271" height="50" frameX="-79" frameY="-96" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="48can" x="1243" y="442" width="271" height="50" frameX="-79" frameY="-96" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="49see" x="1243" y="495" width="271" height="50" frameX="-79" frameY="-96" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="50more" x="1243" y="548" width="271" height="67" frameX="-79" frameY="-87" frameWidth="427" frameHeight="240"/>
+</TextureAtlas>

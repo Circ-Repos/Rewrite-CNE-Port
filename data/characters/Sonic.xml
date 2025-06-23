@@ -1,0 +1,18 @@
+<!DOCTYPE codename-engine-character>
+<character x="-20" icon="sonic-icon" camx="90" y="110" scale="3.1" camy="440" color="#1414FF" antialiasing="false" holdTime="3" sprite="characters/Sonic">
+	<anim loop="true" x="-89.0322580645161" y="-108.064516129032" fps="30" anim="idle" name="idle"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singDOWN" name="singDOWN"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singUP" name="singUP"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="wave" name="wave"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="laugh" name="laugh"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="iamgod" name="iamgod"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singRIGHT" name="singLEFT"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singLEFT" name="singRIGHT"/>
+</character>

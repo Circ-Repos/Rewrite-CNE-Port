@@ -1,0 +1,91 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 15,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "singLEFT"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 15,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "singDOWN"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 15,
+			"anim": "singUP",
+			"indices": [],
+			"name": "singUP"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 15,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "singRIGHT"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 15,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 15,
+			"anim": "scream",
+			"indices": [],
+			"name": "scream"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/Monitor",
+	"position": [
+		-90,
+		110
+	],
+	"healthicon": "majin-icon",
+	"flip_x": false,
+	"healthbar_colors": [
+		40,
+		20,
+		255
+	],
+	"camera_position": [
+		190,
+		-110
+	],
+	"sing_duration": 5,
+	"scale": 3.1,
+	"_editor_isPlayer": false
+}

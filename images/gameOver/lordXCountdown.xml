@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="lordXCountdown.png" width="165" height="75">
+	<SubTexture name="lordXCountdown0000" x="1" y="1" width="80" height="73" frameX="-4" frameY="-6" frameWidth="86" frameHeight="88"/>
+	<SubTexture name="lordXCountdown0001" x="84" y="1" width="80" height="73" frameX="-4" frameY="-6" frameWidth="86" frameHeight="88"/>
+</TextureAtlas>

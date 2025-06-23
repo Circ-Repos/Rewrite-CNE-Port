@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-character>
+<character x="410" y="440" sprite="characters/boyfriendTGE" scale="3" antialiasing="false" flipX="true" camx="-350" camy="-270" isPlayer="true" icon="bf-model-icon" color="#FC0000" holdTime="3">
+	<anim name="idle" anim="idle" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singLEFT" anim="left0" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singDOWN" anim="down0" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="right0" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singLEFTmiss" anim="leftmiss" x="0" y="0" fps="15" loop="false"/>
+	<anim name="singUPmiss" anim="upmiss" x="0" y="0" fps="15" loop="false"/>
+	<anim name="singUP" anim="up0" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singDOWNmiss" anim="downmiss" x="0" y="0" fps="15" loop="false"/>
+	<anim name="singRIGHTmiss" anim="rightmiss" x="0" y="0" fps="15" loop="false"/>
+	<anim name="blink" anim="blink" x="0" y="0" fps="30" loop="false"/>
+	<anim name="introAnim" anim="move" x="0" y="0" fps="30" loop="false"/>
+	<anim name="stare" anim="blink" x="0" y="0" fps="30" loop="true" indices="77,77"/>
+</character>

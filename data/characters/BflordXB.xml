@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="-50" isPlayer="true" y="250" sprite="characters/BflordXB" scale="3.1" antialiasing="false" flipX="true" camx="-150" camy="140" icon="bf-model-icon" color="#0073FF" holdTime="3">
+	<anim name="idle" anim="idle" x="-89.03" y="-108.06" fps="30" loop="true"/>
+	<anim name="singLEFT" anim="singLEFT" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singDOWN" anim="singDOWN" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singUP" anim="singUP" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="singRIGHT" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singDOWNmiss" anim="miss" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singLEFTmiss" anim="miss" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singRIGHTmiss" anim="miss" x="-89.03" y="-108.06" fps="30" loop="false"/>
+	<anim name="singUPmiss" anim="miss" x="-89.03" y="-108.06" fps="30" loop="false"/>
+</character>

@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="260" icon="face" camx="-150" y="90" scale="0.5" camy="250" color="#A1A1A1" holdTime="6.1" sprite="characters/XRodentRap">
+	<anim x="50" y="-10" anim="idle" name="idle"/>
+	<anim x="74" y="10" anim="left" name="singLEFT"/>
+	<anim x="-28" y="26" anim="down" name="singDOWN"/>
+	<anim x="-14" y="-134" anim="up" name="singUP"/>
+	<anim x="18" y="-14" anim="right" name="singRIGHT"/>
+</character>

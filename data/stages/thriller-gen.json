@@ -1,0 +1,15 @@
+{
+	"directory": "wencore",
+	"defaultZoom": 1.2,
+	"stageUI": "",
+
+	"boyfriend": [260, 270],
+	"girlfriend": [600, 350],
+	"opponent": [270, 170],
+	"hide_girlfriend": false,
+
+	"camera_boyfriend": [0, -25],
+	"camera_opponent": [0, 0],
+	"camera_girlfriend": [680, 770],
+	"camera_speed": 999
+}

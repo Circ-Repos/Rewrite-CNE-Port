@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 DEV https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="sega.png" width="5678" height="228" spritePadding="2" borderPadding="2">
+	<SubTexture name="sega0000" x="2" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0001" x="260" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0002" x="3098" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0003" x="3872" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0004" x="4130" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0005" x="4388" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0006" x="4646" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0007" x="4904" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0008" x="5162" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0009" x="5420" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0010" x="518" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0011" x="776" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0012" x="1034" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0013" x="1292" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0014" x="1550" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0015" x="1808" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0016" x="2066" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0017" x="2324" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0018" x="2582" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0019" x="2840" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0020" x="3356" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0021" x="3614" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0022" x="2324" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0023" x="2582" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="sega0024" x="2840" y="2" width="256" height="224" frameX="0" frameY="0" frameWidth="256" frameHeight="224"/>
+</TextureAtlas>

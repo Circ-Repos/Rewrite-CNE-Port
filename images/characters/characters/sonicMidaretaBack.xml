@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 DEV https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="sonicMidaretaBack.png" width="1022" height="1079" spritePadding="2" borderPadding="2">
+	<SubTexture name="idle0000" x="130" y="845" width="127" height="114" frameX="-65" frameY="-76" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0000" x="463" y="506" width="119" height="154" frameX="-69" frameY="-29" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0001" x="744" y="2" width="122" height="126" frameX="-67" frameY="-43" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0002" x="262" y="767" width="125" height="116" frameX="-66" frameY="-49" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0003" x="716" y="761" width="127" height="113" frameX="-65" frameY="-52" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0004" x="2" y="951" width="125" height="112" frameX="-66" frameY="-54" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0005" x="259" y="885" width="123" height="113" frameX="-67" frameY="-55" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0006" x="2" y="582" width="149" height="121" rotated="true" frameX="-68" frameY="-29" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0007" x="719" y="426" width="123" height="121" frameX="-67" frameY="-42" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0008" x="845" y="608" width="125" height="114" frameX="-66" frameY="-46" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0009" x="540" y="764" width="127" height="113" frameX="-65" frameY="-47" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0010" x="389" y="791" width="127" height="113" frameX="-65" frameY="-48" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0011" x="868" y="2" width="127" height="113" frameX="-65" frameY="-50" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0012" x="2" y="833" width="126" height="116" frameX="-66" frameY="-48" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0013" x="845" y="838" width="127" height="111" frameX="-83" frameY="-64" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0014" x="2" y="297" width="167" height="146" rotated="true" frameX="-62" frameY="-27" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0015" x="2" y="2" width="186" height="151" frameX="-70" frameY="-37" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0016" x="153" y="582" width="132" height="135" frameX="-78" frameY="-47" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0017" x="132" y="719" width="128" height="124" frameX="-81" frameY="-53" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0018" x="360" y="323" width="126" height="175" rotated="true" frameX="-38" frameY="-64" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0019" x="287" y="639" width="127" height="126" frameX="-58" frameY="-57" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0020" x="384" y="906" width="103" height="102" frameX="-68" frameY="-68" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0021" x="758" y="130" width="125" height="121" frameX="-60" frameY="-56" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0022" x="770" y="951" width="102" height="94" frameX="-101" frameY="-65" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0023" x="716" y="641" width="127" height="118" frameX="-64" frameY="-44" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0024" x="885" y="117" width="127" height="113" frameX="-65" frameY="-37" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0025" x="844" y="378" width="127" height="113" frameX="-65" frameY="-40" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0026" x="845" y="724" width="127" height="112" frameX="-65" frameY="-44" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0027" x="886" y="232" width="127" height="113" frameX="-65" frameY="-46" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0028" x="886" y="232" width="127" height="113" frameX="-65" frameY="-46" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0029" x="844" y="493" width="127" height="113" frameX="-65" frameY="-48" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0030" x="507" y="2" width="133" height="149" rotated="true" frameX="-78" frameY="-54" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0031" x="516" y="153" width="113" height="165" rotated="true" frameX="-91" frameY="-67" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0032" x="488" y="323" width="106" height="181" rotated="true" frameX="-32" frameY="-70" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0033" x="202" y="2" width="161" height="167" frameX="-71" frameY="-33" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0034" x="360" y="171" width="154" height="150" frameX="-56" frameY="-49" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0035" x="202" y="171" width="156" height="169" rotated="true" frameX="-28" frameY="-17" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0036" x="2" y="445" width="149" height="135" frameX="-31" frameY="-32" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0037" x="2" y="705" width="128" height="126" frameX="-30" frameY="-38" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0038" x="365" y="2" width="140" height="142" frameX="-88" frameY="-50" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0039" x="584" y="506" width="133" height="133" frameX="-89" frameY="-55" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0040" x="584" y="641" width="130" height="121" frameX="-90" frameY="-61" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0041" x="874" y="951" width="94" height="78" frameX="-102" frameY="-87" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0042" x="153" y="467" width="172" height="113" frameX="-84" frameY="-67" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0043" x="764" y="253" width="120" height="123" frameX="-87" frameY="-67" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0044" x="171" y="342" width="168" height="123" frameX="-84" frameY="-67" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0045" x="642" y="2" width="100" height="172" rotated="true" frameX="-84" frameY="-30" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0046" x="416" y="662" width="122" height="127" frameX="-89" frameY="-19" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0047" x="245" y="1000" width="81" height="76" frameX="-61" frameY="-69" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0048" x="719" y="549" width="102" height="87" rotated="true" frameX="-59" frameY="-62" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0049" x="518" y="879" width="97" height="124" frameX="-54" frameY="-51" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0050" x="669" y="876" width="99" height="139" frameX="-54" frameY="-17" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0051" x="596" y="320" width="166" height="104" frameX="-27" frameY="-65" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0052" x="2" y="155" width="198" height="140" frameX="-46" frameY="-59" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0053" x="631" y="176" width="125" height="136" frameX="-69" frameY="-55" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="laugh0054" x="327" y="500" width="134" height="137" frameX="-52" frameY="-50" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0000" x="972" y="608" width="48" height="96" frameX="-16" frameY="-73" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0001" x="823" y="549" width="15" height="65" frameX="-59" frameY="-68" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0002" x="2" y="1065" width="76" height="12" rotated="true" frameX="-66" frameY="-76" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0003" x="669" y="764" width="40" height="108" frameX="-61" frameY="-77" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0004" x="596" y="426" width="116" height="73" rotated="true" frameX="-57" frameY="-76" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0005" x="129" y="961" width="114" height="116" frameX="-55" frameY="-77" frameWidth="256" frameHeight="224"/>
+	<SubTexture name="transition0006" x="130" y="845" width="127" height="114" frameX="-65" frameY="-76" frameWidth="256" frameHeight="224"/>
+</TextureAtlas>

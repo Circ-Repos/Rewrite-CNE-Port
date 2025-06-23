@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="-20" icon="bf" camx="270" y="120" scale="0.65" camy="170" color="#31B0D1" flipX="true" holdTime="4.1" sprite="characters/BFRodentRap" isPlayer="true">
+	<anim anim="idle" name="idle"/>
+	<anim x="21.5384615384615" y="-33.8461538461538" anim="left" name="singLEFT"/>
+	<anim x="6.15384615384615" y="21.5384615384615" anim="down" name="singDOWN"/>
+	<anim x="-18.4615384615385" y="-3.07692307692308" anim="up" name="singUP"/>
+	<anim x="-63.0769230769231" y="32.3076923076923" anim="right" name="singRIGHT"/>
+	<anim loop="true" x="-10.7692307692308" y="-118.461538461538" anim="miss" name="singLEFTmiss"/>
+	<anim loop="true" x="-10.7692307692308" y="-118.461538461538" anim="miss" name="singDOWNmiss"/>
+	<anim loop="true" x="-10.7692307692308" y="-118.461538461538" anim="miss" name="singUPmiss"/>
+	<anim loop="true" x="-10.7692307692308" y="-118.461538461538" anim="miss" name="singRIGHTmiss"/>
+</character>

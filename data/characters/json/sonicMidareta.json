@@ -1,0 +1,113 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "idleHead",
+			"loop": true,
+			"name": "idleHead"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "idle",
+			"loop": true,
+			"name": "idle0"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "transition",
+			"loop": false,
+			"name": "transition"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "laugh",
+			"loop": false,
+			"name": "laugh"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/sonicMidareta",
+	"position": [
+		90,
+		90
+	],
+	"healthicon": "sonic-icon",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		255
+	],
+	"camera_position": [
+		50,
+		-10
+	],
+	"sing_duration": 2.7,
+	"scale": 3,
+	"_editor_isPlayer": false
+}

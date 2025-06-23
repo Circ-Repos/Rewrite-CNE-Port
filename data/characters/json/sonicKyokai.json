@@ -1,0 +1,80 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "idle",
+			"fps": 30,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singLEFT",
+			"fps": 30,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singRIGHT",
+			"fps": 30,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "up",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/sonicKyokai",
+	"position": [
+		0,
+		100
+	],
+	"healthicon": "sonic-icon",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		255
+	],
+	"camera_position": [
+		-320,
+		140
+	],
+	"sing_duration": 2.7,
+	"scale": 4.5,
+	"_editor_isPlayer": false
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE codename-engine-character>
+<character x="40" y="10" camx="370" icon="bf-model-icon" camy="440" scale="3.1" flipX="true" color="#0074FF" isPlayer="true" holdTime="3" antialiasing="false" sprite="characters/Bfsonic">
+	<anim x="-89.0322580645161" anim="singDOWN" fps="30" y="-108.064516129032" name="singDOWN"/>
+
+	<anim x="-89.0322580645161" anim="singUP" fps="30" y="-108.064516129032" name="singUP"/>
+
+	<anim x="-89.0322580645161" anim="miss" fps="30" y="-108.064516129032" name="singDOWNmiss"/>
+
+	<anim x="-89.0322580645161" anim="miss" fps="30" y="-108.064516129032" name="singLEFTmiss"/>
+
+	<anim x="-89.0322580645161" anim="miss" fps="30" y="-108.064516129032" name="singRIGHTmiss"/>
+
+	<anim x="-89.0322580645161" anim="miss" fps="30" y="-108.064516129032" name="singUPmiss"/>
+
+	<anim x="-89.0322580645161" anim="idle" fps="30" y="-108.064516129032" name="idle"/>
+
+	<anim x="-89.0322580645161" anim="yeah" fps="30" y="-108.064516129032" name="yeah"/>
+
+	<anim x="-89.0322580645161" anim="singRIGHT" fps="30" y="-108.064516129032" name="singLEFT"/>
+
+	<anim x="-89.0322580645161" anim="singLEFT" fps="30" y="-108.064516129032" name="singRIGHT"/>
+</character>

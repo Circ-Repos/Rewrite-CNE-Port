@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="fullScreenIntroStuff.png" width="1202" height="1361">
+	<SubTexture name="bfSA2Shadow_0000" x="606" y="1136" width="156" height="123" frameX="-0" frameY="-0" frameWidth="156" frameHeight="123"/>
+	<SubTexture name="bfSA2_0000" x="765" y="1136" width="156" height="123" frameX="-0" frameY="-0" frameWidth="156" frameHeight="123"/>
+	<SubTexture name="fullScreenBGLoop0000" x="1" y="1" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0001" x="1" y="228" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0002" x="402" y="1" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0003" x="402" y="228" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0004" x="1" y="455" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0005" x="402" y="455" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0006" x="1" y="682" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0007" x="402" y="682" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0008" x="803" y="1" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0009" x="803" y="228" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0010" x="803" y="455" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0011" x="803" y="682" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="fullScreenBGLoop0012" x="1" y="909" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0000" x="803" y="909" width="25" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0001" x="831" y="909" width="94" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0002" x="928" y="909" width="192" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0003" x="402" y="909" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0004" x="1" y="1136" width="185" height="224" frameX="-213" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0005" x="189" y="1136" width="87" height="224" frameX="-311" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="pillarWipe0006" x="279" y="1136" width="18" height="224" frameX="-380" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="running0000" x="542" y="1303" width="117" height="57" frameX="-1" frameY="-0" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0001" x="662" y="1262" width="116" height="57" frameX="-1" frameY="-0" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0002" x="924" y="1136" width="115" height="57" frameX="-1" frameY="-1" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0003" x="300" y="1303" width="118" height="55" frameX="-0" frameY="-2" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0004" x="781" y="1262" width="116" height="55" frameX="-1" frameY="-2" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0005" x="924" y="1196" width="115" height="57" frameX="-1" frameY="-1" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0006" x="421" y="1303" width="118" height="57" frameX="-0" frameY="-0" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="running0007" x="900" y="1262" width="116" height="57" frameX="-1" frameY="-0" frameWidth="118" frameHeight="58"/>
+	<SubTexture name="sonicSA2Shadow_0000" x="300" y="1136" width="150" height="164" frameX="-0" frameY="-0" frameWidth="150" frameHeight="164"/>
+	<SubTexture name="sonicSA2_0000" x="453" y="1136" width="150" height="164" frameX="-0" frameY="-0" frameWidth="150" frameHeight="164"/>
+</TextureAtlas>

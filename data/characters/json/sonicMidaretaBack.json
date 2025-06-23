@@ -1,0 +1,58 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": true,
+			"fps": 30,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle0"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "transition",
+			"indices": [],
+			"name": "transition"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "laugh",
+			"indices": [],
+			"name": "laugh"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/sonicMidaretaBack",
+	"position": [
+		90,
+		90
+	],
+	"healthicon": "sonic-icon",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		255
+	],
+	"camera_position": [
+		50,
+		-10
+	],
+	"sing_duration": 2.7,
+	"scale": 3,
+	"_editor_isPlayer": false
+}

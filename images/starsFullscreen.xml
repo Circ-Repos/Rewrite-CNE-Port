@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="starsFullscreen.png" width="350" height="404">
+	<SubTexture name="0_0006" x="1" y="1" width="187" height="139" frameX="-143" frameY="-53" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0005" x="1" y="143" width="157" height="158" frameX="-165" frameY="-4" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0004" x="161" y="143" width="188" height="79" frameX="-71" frameY="-71" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0007" x="191" y="1" width="147" height="100" frameX="-156" frameY="-18" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0008" x="1" y="304" width="95" height="99" frameX="-132" frameY="-41" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0002" x="99" y="304" width="96" height="67" frameX="-142" frameY="-70" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0003" x="161" y="225" width="107" height="50" frameX="-140" frameY="-92" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0010" x="191" y="104" width="112" height="34" frameX="-129" frameY="-120" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0009" x="99" y="374" width="76" height="28" frameX="-156" frameY="-117" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0001" x="306" y="104" width="6" height="4" frameX="-179" frameY="-96" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="0_0000" x="306" y="111" width="5" height="3" frameX="-189" frameY="-104" frameWidth="398" frameHeight="224"/>
+</TextureAtlas>

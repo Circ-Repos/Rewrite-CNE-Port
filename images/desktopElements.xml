@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="desktopElements.png" width="886" height="890">
+	<SubTexture name="bird0000" x="299" y="822" width="63" height="64" frameX="-3" frameY="-0" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0001" x="365" y="821" width="64" height="63" frameX="-2" frameY="-1" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0002" x="432" y="821" width="63" height="62" frameX="-3" frameY="-2" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0003" x="161" y="822" width="66" height="59" frameX="-0" frameY="-5" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0004" x="796" y="801" width="63" height="42" frameX="-3" frameY="-24" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0005" x="796" y="846" width="63" height="40" frameX="-3" frameY="-24" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0006" x="498" y="821" width="63" height="45" frameX="-3" frameY="-19" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="bird0007" x="230" y="822" width="66" height="58" frameX="-0" frameY="-6" frameWidth="66" frameHeight="66"/>
+	<SubTexture name="cone0000" x="561" y="751" width="82" height="67" frameX="-21" frameY="-4" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cone0001" x="1" y="822" width="78" height="67" frameX="-23" frameY="-2" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cone0002" x="82" y="822" width="76" height="66" frameX="-16" frameY="-0" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cone0003" x="720" y="813" width="73" height="73" frameX="-36" frameY="-4" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cone0004" x="646" y="813" width="71" height="75" frameX="-38" frameY="-2" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cone0005" x="646" y="744" width="82" height="66" frameX="-21" frameY="-5" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cone0006" x="474" y="751" width="84" height="65" frameX="-20" frameY="-7" frameWidth="112" frameHeight="96"/>
+	<SubTexture name="cube0000" x="474" y="645" width="102" height="103" frameX="-6" frameY="-9" frameWidth="112" frameHeight="128"/>
+	<SubTexture name="cube0001" x="738" y="709" width="88" height="89" frameX="-10" frameY="-14" frameWidth="112" frameHeight="128"/>
+	<SubTexture name="cube0002" x="789" y="516" width="96" height="98" frameX="-11" frameY="-11" frameWidth="112" frameHeight="128"/>
+	<SubTexture name="cube0003" x="789" y="617" width="93" height="89" frameX="-0" frameY="-18" frameWidth="112" frameHeight="128"/>
+	<SubTexture name="cube0004" x="631" y="642" width="104" height="99" frameX="-3" frameY="-15" frameWidth="112" frameHeight="128"/>
+	<SubTexture name="cylinder0000" x="798" y="1" width="87" height="100" frameX="-0" frameY="-0" frameWidth="87" frameHeight="100"/>
+	<SubTexture name="cylinder0001" x="798" y="104" width="87" height="100" frameX="-0" frameY="-0" frameWidth="87" frameHeight="100"/>
+	<SubTexture name="cylinder0002" x="789" y="207" width="87" height="100" frameX="-0" frameY="-0" frameWidth="87" frameHeight="100"/>
+	<SubTexture name="cylinder0003" x="789" y="310" width="87" height="100" frameX="-0" frameY="-0" frameWidth="87" frameHeight="100"/>
+	<SubTexture name="cylinder0004" x="789" y="413" width="87" height="100" frameX="-0" frameY="-0" frameWidth="87" frameHeight="100"/>
+	<SubTexture name="eye0000" x="470" y="325" width="1" height="1" frameX="-0" frameY="-0" frameWidth="60" frameHeight="34"/>
+	<SubTexture name="eye0001" x="579" y="744" width="39" height="4" frameX="-11" frameY="-19" frameWidth="60" frameHeight="34"/>
+	<SubTexture name="eye0002" x="738" y="664" width="43" height="14" frameX="-7" frameY="-14" frameWidth="60" frameHeight="34"/>
+	<SubTexture name="eye0003" x="738" y="642" width="47" height="19" frameX="-6" frameY="-10" frameWidth="60" frameHeight="34"/>
+	<SubTexture name="eye0004" x="829" y="709" width="54" height="25" frameX="-4" frameY="-6" frameWidth="60" frameHeight="34"/>
+	<SubTexture name="eye0005" x="564" y="821" width="57" height="32" frameX="-2" frameY="-1" frameWidth="60" frameHeight="34"/>
+	<SubTexture name="pillar0000" x="118" y="1" width="54" height="171" frameX="-0" frameY="-0" frameWidth="54" frameHeight="171"/>
+	<SubTexture name="tree0000" x="1" y="1" width="114" height="174" frameX="-0" frameY="-0" frameWidth="114" frameHeight="174"/>
+	<SubTexture name="watcher0000" x="1" y="340" width="151" height="158" frameX="-5" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0001" x="155" y="340" width="155" height="158" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0002" x="314" y="498" width="156" height="157" frameX="-2" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0003" x="313" y="337" width="154" height="158" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0004" x="175" y="1" width="152" height="159" frameX="-5" frameY="-3" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0005" x="473" y="485" width="155" height="157" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0006" x="1" y="178" width="155" height="159" frameX="-3" frameY="-3" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0007" x="643" y="1" width="152" height="157" frameX="-4" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0008" x="159" y="175" width="154" height="159" frameX="-4" frameY="-3" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0009" x="629" y="162" width="155" height="157" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0010" x="630" y="322" width="154" height="157" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0011" x="489" y="1" width="151" height="158" frameX="-5" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0012" x="631" y="482" width="155" height="157" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0013" x="330" y="1" width="156" height="159" frameX="-2" frameY="-3" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0014" x="474" y="163" width="152" height="158" frameX="-4" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0015" x="474" y="324" width="153" height="158" frameX="-4" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0016" x="316" y="163" width="155" height="159" frameX="-3" frameY="-3" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0017" x="1" y="662" width="154" height="157" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0018" x="1" y="501" width="152" height="158" frameX="-4" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0019" x="156" y="501" width="155" height="158" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0020" x="158" y="662" width="156" height="157" frameX="-2" frameY="-4" frameWidth="162" frameHeight="162"/>
+	<SubTexture name="watcher0021" x="317" y="658" width="154" height="157" frameX="-3" frameY="-4" frameWidth="162" frameHeight="162"/>
+</TextureAtlas>

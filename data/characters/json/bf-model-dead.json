@@ -1,0 +1,58 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "firstDeath",
+			"fps": 30,
+			"name": "death",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "deathLoop",
+			"fps": 30,
+			"name": "loop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				272,
+				-8
+			],
+			"anim": "deathConfirm",
+			"fps": 30,
+			"name": "confirm",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/bfLegacy",
+	"position": [
+		700,
+		350
+	],
+	"healthicon": "bf-model-icon",
+	"flip_x": true,
+	"healthbar_colors": [
+		40,
+		96,
+		255
+	],
+	"camera_position": [
+		-155,
+		25
+	],
+	"sing_duration": 6.1,
+	"scale": 4,
+	"_editor_isPlayer": true
+}

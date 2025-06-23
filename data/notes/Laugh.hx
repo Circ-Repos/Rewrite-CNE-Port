@@ -1,0 +1,1 @@
+function onNoteHit(event) if (event.noteType == "-laugh") event.animSuffix = "-laugh";

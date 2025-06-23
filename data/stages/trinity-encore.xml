@@ -1,0 +1,61 @@
+<!DOCTYPE codename-engine-stage>
+<stage startCamPosY="0" name="trinity-encore" zoom="1.5" startCamPosX="0">
+	<girlfriend alpha="0" x="260" y="270"/>
+	<combo x="69420" y="44444"/>
+
+	<!-- MAJIN PHASE 1 -->
+	<sprite x="73" antialiasing="false" sprite="stagetras" y="393" scale="3" name="stagebackMajin" scrollx="1" scrolly="1"/>
+	<sprite x="60" scrolly="0.85" sprite="bgmazin" y="420" scale="2.5" name="stagefrontMajin" scrollx="0.85"/>
+	<sprite scrolly="0.9" antialiasing="false" x="59" sprite="stagepilars" y="400" scale="2.5" name="stagepilarsMajin" scrollx="0.9"/>
+
+	<!-- MAJIN PHASE 2 -->
+	<sprite scrolly="0" antialiasing="false" sprite="bgtv" scale="5" alpha="0.001" scrollx="0" name="stageskyMajinTV" x="0" y="0"/>
+	<sprite x="100" antialiasing="false" sprite="floortv" y="400" scale="3" alpha="0.001" name="stagegroundMajinTV" scrollx="1" scrolly="1"/>
+	<sprite x="180" y="350" type="loop" scale="3" name="stagebackMajinTV" antialiasing="false" sprite="faces" scrollx="0.8" scrolly="0.8" alpha="0.001">
+		<anim loop="true" fps="5" anim="idle" name="idle"/>
+	</sprite>
+
+	<!-- X -->
+	<sprite x="-80" y="300" type="none" scale="3" scrollx="0.9" name="stagebackX" scrolly="0.9" alpha="0.001" antialiasing="false" sprite="skybox"/>
+	<sprite antialiasing="false" x="10" y="390" sprite="scrapbrainground" type="none" scale="3" alpha="0.001" name="stagegroundX" scrollx="1" scrolly="1"/>
+
+	<!-- RODENTRAP -->
+	<sprite x="-100" y="100" type="none" scale="0.6" scrollx="0.8" name="stagebackRR" scrolly="0.8" alpha="0.001" antialiasing="false" sprite="LegacyStageBackground"/>
+	<sprite scrolly="0.8" x="-150" y="100" sprite="LegacyStageCloudsNSea" type="none" scale="0.6" alpha="0.001" scrollx="0.8" name="stagebackRR2"/>
+	<sprite scrolly="0.9" x="-200" y="450" sprite="LegacyStageFoliage" type="none" scale="0.6" alpha="0.001" scrollx="0.9" name="stagebackRR3"/>
+	<sprite x="-250" y="600" sprite="LegacyStageFloor" alpha="0.001" name="stagegroundRR" scrollx="1" scrolly="1"/>
+
+	<!-- LORD X PHASE 1 -->
+	<sprite name="stagebackLX" sprite="skyboxlx" x="0" y="360" scale="3.3" scrollx="0.6" scrolly="0.6" antialiasing="false" alpha="0.001" type="loop">
+		<anim name="idle" anim="idle" fps="5" loop="true"/>
+	</sprite>
+
+	<!-- LORD X PHASE 2 -->
+	<sprite name="stagebackLX2" sprite="poltergeist" x="250" y="15" scale="3" scrollx="0" scrolly="0" antialiasing="false" alpha="0.001" type="loop">
+		<anim name="idle" anim="idle" fps="24" loop="true"/>
+	</sprite>
+
+	<!-- REWRITE -->
+	<sprite name="stageskyR" sprite="ghsky" x="100" y="-50" scale="5" scrollx="0" scrolly="0" antialiasing="false" alpha="0.001"/>
+	<sprite name="stagebackR" sprite="ghback" x="180" y="310" scale="3" scrollx="0.5" scrolly="0.5" antialiasing="false" alpha="0.001"/>
+	<sprite name="stageobjR" sprite="objects" x="70" y="325" scale="3" scrollx="0.6" scrolly="0.6" antialiasing="false" alpha="0.001"/>
+	<sprite name="stagegroundR" sprite="ghstage" x="100" y="350" scale="3" scrollx="0.9" scrolly="0.9" antialiasing="false" alpha="0.001"/>
+	<sprite name="stagestuffR" sprite="animals" x="80" y="300" scale="3" scrollx="0.8" scrolly="0.8" antialiasing="false" alpha="0.001" type="loop">
+		<anim name="idle" anim="idle" fps="5" loop="true"/>
+	</sprite>
+
+	<!-- REWRITE LYRICS -->
+	<sprite name="stars" sprite="starsFullscreen" x="-70" y="0" scale="3.7" scrollx="0" scrolly="0" antialiasing="false" alpha="0.001" type="loop">
+		<anim name="idle" anim="0_00" fps="15" loop="true"/>
+	</sprite>
+	<sprite name="shapes" sprite="shapesFullscreen" x="-160" y="-40" scale="3.7" scrollx="0" scrolly="0" antialiasing="false" alpha="0.001" type="loop">
+		<anim name="idle" anim="0_00" fps="15" loop="true"/>
+	</sprite>
+	<sprite name="floor" sprite="floorFullscreen" x="-100" y="-50" scale="3.7" scrollx="0" scrolly="0" antialiasing="false" alpha="0.001" type="loop">
+		<anim name="idle" anim="0_00" fps="30" loop="true"/>
+	</sprite>
+
+	<!-- Characters -->
+	<dad x="-159" y="-72"/>
+	<boyfriend x="-75" y="25"/>
+</stage>

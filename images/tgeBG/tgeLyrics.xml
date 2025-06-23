@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="tgeLyrics.png" width="297" height="300">
+	<SubTexture name="1seriously" x="185" y="19" width="90" height="28" frameX="-5" frameY="-4" frameWidth="96" frameHeight="38"/>
+	<SubTexture name="1itsawaste" x="185" y="50" width="87" height="30" frameX="-4" frameY="-5" frameWidth="189" frameHeight="41"/>
+	<SubTexture name="1lets" x="236" y="124" width="57" height="24" frameX="-4" frameY="-3" frameWidth="64" frameHeight="30"/>
+	<SubTexture name="1for" x="236" y="221" width="42" height="32" frameX="-26" frameY="-5" frameWidth="93" frameHeight="42"/>
+	<SubTexture name="1are" x="238" y="192" width="41" height="24" frameX="-4" frameY="-5" frameWidth="50" frameHeight="34"/>
+	<SubTexture name="1its0" x="45" y="269" width="40" height="24" frameX="-4" frameY="-3" frameWidth="48" frameHeight="31"/>
+	<SubTexture name="1i20000" x="275" y="50" width="12" height="29" frameX="-20" frameY="-10" frameWidth="219" frameHeight="52"/>
+	<SubTexture name="1be" x="175" y="256" width="26" height="24" frameX="-3" frameY="-4" frameWidth="33" frameHeight="32"/>
+	<SubTexture name="1la" x="204" y="249" width="26" height="24" frameX="-5" frameY="-10" frameWidth="35" frameHeight="44"/>
+	<SubTexture name="1you20000" x="175" y="283" width="23" height="13" frameX="-4" frameY="-7" frameWidth="119" frameHeight="25"/>
+	<SubTexture name="1i0000" x="258" y="110" width="2" height="10" frameX="-3" frameY="-14" frameWidth="62" frameHeight="27"/>
+	<SubTexture name="2itsawaste" x="1" y="134" width="149" height="31" frameX="-4" frameY="-4" frameWidth="189" frameHeight="41"/>
+	<SubTexture name="2dreading" x="1" y="168" width="118" height="24" frameX="-2" frameY="-5" frameWidth="126" frameHeight="38"/>
+	<SubTexture name="2am20000" x="184" y="83" width="71" height="38" frameX="-20" frameY="-1" frameWidth="219" frameHeight="52"/>
+	<SubTexture name="2are20000" x="127" y="230" width="54" height="14" frameX="-4" frameY="-6" frameWidth="119" frameHeight="25"/>
+	<SubTexture name="2play" x="133" y="195" width="54" height="24" frameX="-20" frameY="-9" frameWidth="93" frameHeight="42"/>
+	<SubTexture name="2not" x="184" y="222" width="49" height="24" frameX="-4" frameY="-6" frameWidth="56" frameHeight="35"/>
+	<SubTexture name="2you" x="190" y="195" width="45" height="23" frameX="-2" frameY="-5" frameWidth="51" frameHeight="34"/>
+	<SubTexture name="2old" x="1" y="269" width="41" height="30" frameX="-26" frameY="-6" frameWidth="93" frameHeight="42"/>
+	<SubTexture name="2all" x="258" y="83" width="37" height="24" frameX="-6" frameY="-5" frameWidth="48" frameHeight="34"/>
+	<SubTexture name="2la" x="88" y="256" width="26" height="35" frameX="-4" frameY="-4" frameWidth="35" frameHeight="44"/>
+	<SubTexture name="2am0000" x="127" y="247" width="28" height="13" frameX="-3" frameY="-11" frameWidth="62" frameHeight="27"/>
+	<SubTexture name="3itsawaste" x="1" y="51" width="180" height="31" frameX="-4" frameY="-4" frameWidth="189" frameHeight="41"/>
+	<SubTexture name="3sonic0000" x="1" y="85" width="180" height="46" frameX="-20" frameY="-1" frameWidth="219" frameHeight="52"/>
+	<SubTexture name="3flawed0000" x="185" y="1" width="111" height="15" frameX="-4" frameY="-5" frameWidth="119" frameHeight="25"/>
+	<SubTexture name="3ready" x="122" y="168" width="82" height="24" frameX="-4" frameY="-6" frameWidth="93" frameHeight="34"/>
+	<SubTexture name="3afraid" x="153" y="134" width="80" height="24" frameX="-5" frameY="-6" frameWidth="90" frameHeight="35"/>
+	<SubTexture name="3times" x="1" y="195" width="70" height="32" frameX="-12" frameY="-5" frameWidth="93" frameHeight="42"/>
+	<SubTexture name="3okay" x="1" y="230" width="63" height="36" frameX="-3" frameY="-1" frameWidth="69" frameHeight="39"/>
+	<SubTexture name="3god0000" x="67" y="230" width="57" height="20" frameX="-3" frameY="-4" frameWidth="62" frameHeight="27"/>
+	<SubTexture name="3la" x="204" y="276" width="26" height="20" frameX="-5" frameY="-12" frameWidth="35" frameHeight="44"/>
+	<SubTexture name="3a0" x="278" y="19" width="16" height="23" frameX="-24" frameY="-5" frameWidth="64" frameHeight="33"/>
+	<SubTexture name="4sonicFucked0000" x="1" y="1" width="181" height="47" frameX="-19" frameY="-0" frameWidth="219" frameHeight="52"/>
+	<SubTexture name="4game" x="207" y="161" width="78" height="28" frameX="-7" frameY="-5" frameWidth="93" frameHeight="38"/>
+	<SubTexture name="4sake" x="74" y="195" width="56" height="32" frameX="-19" frameY="-5" frameWidth="93" frameHeight="42"/>
+	<SubTexture name="4la" x="117" y="263" width="26" height="28" frameX="-5" frameY="-8" frameWidth="35" frameHeight="44"/>
+	<SubTexture name="5la" x="204" y="249" width="26" height="24" frameX="-5" frameY="-10" frameWidth="35" frameHeight="44"/>
+	<SubTexture name="6la" x="233" y="256" width="26" height="22" frameX="-5" frameY="-11" frameWidth="35" frameHeight="44"/>
+	<SubTexture name="7la" x="146" y="263" width="26" height="28" frameX="-4" frameY="-8" frameWidth="35" frameHeight="44"/>
+</TextureAtlas>

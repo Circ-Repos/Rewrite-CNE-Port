@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 DEV https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="socials.png" width="21" height="102" spritePadding="2" borderPadding="2">
+	<SubTexture name="bsky0" x="2" y="2" width="17" height="21" frameX="0" frameY="0" frameWidth="17" frameHeight="21"/>
+	<SubTexture name="bskyDisabled" x="2" y="25" width="17" height="21" frameX="0" frameY="0" frameWidth="17" frameHeight="21"/>
+	<SubTexture name="twitter0" x="2" y="48" width="16" height="12" frameX="0" frameY="0" frameWidth="16" frameHeight="12"/>
+	<SubTexture name="twitterDisabled" x="2" y="62" width="16" height="12" frameX="0" frameY="0" frameWidth="16" frameHeight="12"/>
+	<SubTexture name="youtube0" x="2" y="76" width="16" height="11" frameX="0" frameY="0" frameWidth="16" frameHeight="11"/>
+	<SubTexture name="youtubeDisabled" x="2" y="89" width="16" height="11" frameX="0" frameY="0" frameWidth="16" frameHeight="11"/>
+</TextureAtlas>

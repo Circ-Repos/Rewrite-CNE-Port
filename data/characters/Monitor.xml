@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="majin-icon" camx="120" y="110" scale="3.1" camy="450" color="#2814FF" antialiasing="false" holdTime="5" sprite="characters/Monitor">
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="15" anim="singLEFT" name="singLEFT"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="15" anim="singDOWN" name="singDOWN"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="15" anim="singUP" name="singUP"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="15" anim="singRIGHT" name="singRIGHT"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="15" anim="idle" name="idle"/>
+
+	<anim x="-89.0322580645161" y="-108.064516129032" fps="15" anim="scream" name="scream"/>
+</character>

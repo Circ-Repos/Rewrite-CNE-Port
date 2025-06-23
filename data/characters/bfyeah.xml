@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-character>
+<character x="200" y="100" sprite="characters/boyfriend" flipX="true" camx="150" icon="bf-model-icon" color="#2860FF" holdTime="6.1">
+	<anim name="yeah" anim="bfyeah yeah" x="0" y="0" fps="30" loop="false"/>
+</character>

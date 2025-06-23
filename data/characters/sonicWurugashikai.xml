@@ -1,0 +1,16 @@
+<!DOCTYPE codename-engine-character>
+<character x="90" icon="sonic-icon" camx="-320" y="90" scale="3" camy="140" color="#1414FF" antialiasing="false" holdTime="2.7" sprite="characters/sonicWurugashikai">
+	<anim loop="true" x="-92" y="-111.666666666667" fps="30" anim="idle" name="idle"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="down" name="singDOWN"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="left" name="singLEFT"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="right" name="singRIGHT"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="up" name="singUP"/>
+	<anim x="-91.6666666666667" y="-111.666666666667" fps="30" anim="0_" name="ringCollect"/>
+	<anim x="-10.3333333333333" y="-124" fps="33" anim="transition" name="transform"/>
+	<anim x="-91.6666666666667" y="-111.666666666667" fps="30" anim="swap" name="exeswap"/>
+	<anim loop="true" x="-92" y="-111.666666666667" fps="30" anim="lalala" name="lalala"/>
+	<anim loop="true" x="-92" y="-111.666666666667" fps="30" anim="ring" name="ring"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="urTheOne" name="urTheOne"/>
+	<anim loop="true" x="-92" y="-111.666666666667" fps="30" anim="shoot0" indices="0,0" name="shootIdle"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="shoot0" name="shoot"/>
+</character>

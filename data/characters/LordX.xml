@@ -1,0 +1,18 @@
+<!DOCTYPE codename-engine-character>
+<character x="-380" y="240" camx="460" icon="lord_X-icon" camy="430" scale="3.1" color="#2814FF" holdTime="3" antialiasing="false" sprite="characters/LordX">
+	<anim x="-91.6129032258064" loop="true" anim="idle" fps="30" y="-108.387096774194" name="idle"/>
+
+	<anim x="-91.6129032258064" anim="singLEFT" fps="30" y="-108.387096774194" name="singLEFT"/>
+
+	<anim x="-91.6129032258064" anim="singDOWN" fps="30" y="-108.387096774194" name="singDOWN"/>
+
+	<anim x="-91.6129032258064" anim="singUP" fps="30" y="-108.387096774194" name="singUP"/>
+
+	<anim x="-91.6129032258064" anim="singRIGHT" fps="30" y="-108.387096774194" name="singRIGHT"/>
+
+	<anim x="-91.6129032258064" anim="glitch" fps="30" y="-108.387096774194" name="glitch"/>
+
+	<anim x="-179.677419354839" anim="laugh" fps="30" y="-119.354838709677" name="laugh"/>
+
+	<anim x="-179.677419354839" loop="true" anim="laugh" fps="30" y="-119.354838709677" name="idle-alt" indices="0,0"/>
+</character>

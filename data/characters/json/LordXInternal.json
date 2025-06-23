@@ -1,0 +1,118 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				43,
+				144
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				36,
+				-35
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				114,
+				183
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				53,
+				54
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-24,
+				-27
+			],
+			"anim": "appear",
+			"fps": 24,
+			"name": "appear",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				190,
+				200
+			],
+			"anim": "glitch",
+			"fps": 24,
+			"name": "glitch",
+			"indices": []
+		},
+		{
+			"offsets": [
+				190,
+				200
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "glitchLoop",
+			"indices": [
+				1,
+				1,
+				1,
+				1
+			],
+			"name": "glitch"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/LordXInternal",
+	"position": [
+		10,
+		220
+	],
+	"healthicon": "face",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		380,
+		-290
+	],
+	"sing_duration": 6.1,
+	"scale": 3,
+	"_editor_isPlayer": false
+}

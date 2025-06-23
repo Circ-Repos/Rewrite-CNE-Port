@@ -1,0 +1,113 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "idle",
+			"fps": 30,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "singDOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "singUP",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "wave",
+			"indices": [],
+			"name": "wave"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "laugh",
+			"indices": [],
+			"name": "laugh"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "iamgod",
+			"indices": [],
+			"name": "iamgod"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "singRIGHT"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "singLEFT"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/Sonic",
+	"position": [
+		-20,
+		110
+	],
+	"healthicon": "sonic-icon",
+	"flip_x": false,
+	"healthbar_colors": [
+		20,
+		20,
+		255
+	],
+	"camera_position": [
+		190,
+		-110
+	],
+	"sing_duration": 3,
+	"scale": 3.1,
+	"_editor_isPlayer": false
+}

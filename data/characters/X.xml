@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="-90" y="70" camx="270" icon="sonicexe-icon" camy="440" scale="3.1" color="#8C0000" holdTime="3" antialiasing="false" sprite="characters/X">
+	<anim x="-89.0322580645161" loop="true" anim="idle" fps="30" y="-108.064516129032" name="idle"/>
+
+	<anim x="-89.0322580645161" anim="singLEFT" fps="30" y="-108.064516129032" name="singLEFT"/>
+
+	<anim x="-89.0322580645161" anim="singDOWN" fps="30" y="-108.064516129032" name="singDOWN"/>
+
+	<anim x="-89.0322580645161" anim="singUP" fps="30" y="-108.064516129032" name="singUP"/>
+
+	<anim x="-89.0322580645161" anim="singRIGHT" fps="30" y="-108.064516129032" name="singRIGHT"/>
+</character>

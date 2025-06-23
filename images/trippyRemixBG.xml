@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="trippyRemixBG.png" width="3107" height="130">
+	<SubTexture name="trippyRemixBG0000" x="1" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0001" x="260" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0002" x="519" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0003" x="778" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0004" x="1037" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0005" x="1296" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0006" x="1555" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0007" x="1814" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0008" x="2073" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0009" x="2332" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0010" x="2591" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+	<SubTexture name="trippyRemixBG0011" x="2850" y="1" width="256" height="128" frameX="-0" frameY="-0" frameWidth="256" frameHeight="128"/>
+</TextureAtlas>

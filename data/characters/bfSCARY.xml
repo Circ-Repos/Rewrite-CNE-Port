@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="-330" y="430" sprite="characters/bfSCARY" scale="3" antialiasing="false" flipX="true" camx="150" camy="-90" isPlayer="true" icon="bf-model-icon" color="#FC0000" holdTime="2.7">
+	<anim name="idle" anim="IDLE" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singLEFT" anim="LEFT" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singDOWN" anim="DOWN" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singUP" anim="UP" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singRIGHT" anim="RIGHT" x="0" y="0" fps="30" loop="false"/>
+	<anim name="singLEFTmiss" anim="MISS" x="0" y="0" fps="30" loop="true"/>
+	<anim name="singDOWNmiss" anim="MISS" x="0" y="0" fps="30" loop="true"/>
+	<anim name="singUPmiss" anim="MISS" x="0" y="0" fps="30" loop="true"/>
+	<anim name="singRIGHTmiss" anim="MISS" x="0" y="0" fps="30" loop="true"/>
+</character>

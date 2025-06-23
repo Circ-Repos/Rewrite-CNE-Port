@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="90" icon="sonic-icon" camx="-320" y="90" scale="3" camy="140" color="#1414FF" antialiasing="false" holdTime="2.7" sprite="characters/sonicWurugashikaiDark">
+	<anim loop="true" x="-92" y="-111.666666666667" fps="30" anim="idle" name="idle"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="down" name="singDOWN"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="left" name="singLEFT"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="right" name="singRIGHT"/>
+	<anim x="-92" y="-111.666666666667" fps="30" anim="up" name="singUP"/>
+</character>

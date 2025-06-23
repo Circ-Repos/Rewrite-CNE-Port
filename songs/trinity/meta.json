@@ -1,0 +1,17 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": false,
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"bpm": 160,
+	"difficulties": [
+		"TRINITY"
+	],
+	"needsVoices": false,
+	"parsedColor": -7179779,
+	"displayName": "trinity",
+	"icon": "trinity-icon",
+	"name": "trinity",
+	"color": "#9271FD",
+	"customValues": {}
+}

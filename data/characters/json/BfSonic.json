@@ -1,0 +1,135 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singDOWN",
+			"fps": 30,
+			"name": "singDOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singUP",
+			"fps": 30,
+			"name": "singUP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singDOWNmiss",
+			"fps": 30,
+			"name": "miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singLEFTmiss",
+			"fps": 30,
+			"name": "miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 30,
+			"name": "miss",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-276,
+				-335
+			],
+			"anim": "singUPmiss",
+			"fps": 30,
+			"name": "miss",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"loop": false,
+			"fps": 30,
+			"anim": "yeah",
+			"indices": [],
+			"name": "yeah"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "singRIGHT"
+		},
+		{
+			"offsets": [
+				-276,
+				-335
+			],
+			"indices": [],
+			"fps": 30,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "singLEFT"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": true,
+	"image": "characters/Bfsonic",
+	"position": [
+		40,
+		10
+	],
+	"healthicon": "bf-model-icon",
+	"flip_x": true,
+	"healthbar_colors": [
+		0,
+		116,
+		255
+	],
+	"camera_position": [
+		-160,
+		120
+	],
+	"sing_duration": 3,
+	"scale": 3.1,
+	"_editor_isPlayer": true
+}

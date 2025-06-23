@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="lyricsPlaceholder.png" width="610" height="448">
+	<SubTexture name="1lets0000" x="1" y="408" width="97" height="39" frameX="-44" frameY="-32" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="2play0000" x="1" y="1" width="338" height="60" frameX="-44" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="3a0000" x="1" y="64" width="338" height="169" frameX="-44" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="4game0000" x="1" y="236" width="338" height="169" frameX="-44" frameY="-23" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="5for0000" x="191" y="408" width="68" height="26" frameX="-179" frameY="-107" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="6old0000" x="327" y="408" width="52" height="22" frameX="-187" frameY="-109" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="7time0000" x="262" y="408" width="62" height="22" frameX="-183" frameY="-109" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="8sake0000" x="101" y="408" width="87" height="22" frameX="-170" frameY="-109" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="9are0000" x="382" y="408" width="49" height="17" frameX="-189" frameY="-115" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="10you0000" x="342" y="388" width="108" height="17" frameX="-159" frameY="-115" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="11ready0000" x="342" y="306" width="231" height="38" frameX="-98" frameY="-101" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="12ready0000" x="342" y="347" width="231" height="38" frameX="-98" frameY="-101" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="13ready0000" x="342" y="1" width="267" height="38" frameX="-74" frameY="-101" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="14ready0000" x="342" y="42" width="237" height="84" frameX="-95" frameY="-92" frameWidth="427" frameHeight="240"/>
+	<SubTexture name="15ready0000" x="342" y="129" width="236" height="174" frameX="-96" frameY="-66" frameWidth="427" frameHeight="240"/>
+</TextureAtlas>

@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<character x="700" y="350" sprite="characters/bfLegacy" scale="4" antialiasing="false" flipX="true" camx="-155" camy="25" isPlayer="true" icon="bf-model-icon" color="#2860FF" holdTime="6.1">
+	<anim name="firstDeath" anim="death" x="0" y="0" fps="30" loop="false"/>
+	<anim name="deathLoop" anim="loop" x="0" y="0" fps="30" loop="true"/>
+	<anim name="deathConfirm" anim="confirm" x="68" y="-2" fps="30" loop="false"/>
+</character>

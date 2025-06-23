@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="fellaJumpscare.png" width="7257" height="226">
+	<SubTexture name="loop0000" x="4274" y="1" width="267" height="217" frameX="-78" frameY="-7" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0001" x="1941" y="1" width="256" height="212" frameX="-94" frameY="-12" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0002" x="3489" y="1" width="252" height="215" frameX="-96" frameY="-9" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0003" x="1178" y="1" width="251" height="211" frameX="-90" frameY="-13" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0004" x="923" y="1" width="252" height="210" frameX="-95" frameY="-14" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0005" x="3230" y="1" width="256" height="214" frameX="-90" frameY="-10" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0006" x="1432" y="1" width="251" height="211" frameX="-89" frameY="-13" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0007" x="2200" y="1" width="252" height="212" frameX="-94" frameY="-12" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0008" x="1686" y="1" width="252" height="211" frameX="-92" frameY="-13" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0009" x="3744" y="1" width="273" height="215" frameX="-70" frameY="-9" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0010" x="4544" y="1" width="252" height="217" frameX="-92" frameY="-7" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0011" x="4020" y="1" width="251" height="215" frameX="-94" frameY="-9" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0012" x="2455" y="1" width="251" height="212" frameX="-92" frameY="-12" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="loop0013" x="2976" y="1" width="251" height="213" frameX="-90" frameY="-11" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0000" x="1" y="1" width="1" height="1" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0001" x="1" y="1" width="1" height="1" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0002" x="5" y="1" width="12" height="10" frameX="-177" frameY="-214" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0003" x="20" y="1" width="163" height="50" frameX="-43" frameY="-174" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0004" x="186" y="1" width="201" height="116" frameX="-16" frameY="-108" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0005" x="390" y="1" width="234" height="154" frameX="-0" frameY="-70" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0006" x="627" y="1" width="293" height="205" frameX="-26" frameY="-19" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0007" x="5813" y="1" width="274" height="224" frameX="-94" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0008" x="6090" y="1" width="325" height="224" frameX="-69" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0009" x="6418" y="1" width="304" height="224" frameX="-94" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0010" x="5062" y="1" width="266" height="219" frameX="-132" frameY="-5" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0011" x="6725" y="1" width="296" height="224" frameX="-102" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0012" x="4799" y="1" width="260" height="218" frameX="-85" frameY="-6" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0013" x="7024" y="1" width="232" height="224" frameX="-66" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0014" x="5584" y="1" width="226" height="222" frameX="-90" frameY="-2" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0015" x="5331" y="1" width="250" height="219" frameX="-99" frameY="-5" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="rise0016" x="2709" y="1" width="264" height="212" frameX="-66" frameY="-12" frameWidth="398" frameHeight="224"/>
+</TextureAtlas>

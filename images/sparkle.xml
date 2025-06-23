@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="sparkle.png" width="344" height="359">
+	<SubTexture name="sparkle0000" x="250" y="283" width="93" height="72" frameX="-36" frameY="-6" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0001" x="265" y="100" width="51" height="39" frameX="-54" frameY="-24" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0002" x="265" y="142" width="36" height="24" frameX="-57" frameY="-33" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0003" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0004" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0005" x="265" y="142" width="36" height="24" frameX="-258" frameY="-78" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0006" x="1" y="1" width="324" height="96" frameX="-3" frameY="-30" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0007" x="1" y="205" width="297" height="75" frameX="-9" frameY="-36" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0008" x="265" y="142" width="36" height="24" frameX="-258" frameY="-78" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0009" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0010" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0011" x="265" y="142" width="36" height="24" frameX="-342" frameY="-33" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0012" x="250" y="283" width="93" height="72" frameX="-318" frameY="-15" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0013" x="1" y="283" width="246" height="75" frameX="-144" frameY="-27" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0014" x="1" y="100" width="261" height="102" frameX="-117" frameY="-33" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0015" x="265" y="100" width="51" height="39" frameX="-138" frameY="-78" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0016" x="265" y="142" width="36" height="24" frameX="-144" frameY="-78" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0017" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0018" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0019" x="265" y="100" width="51" height="39" frameX="-219" frameY="-75" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0020" x="265" y="142" width="36" height="24" frameX="-237" frameY="-84" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0021" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0022" x="265" y="169" width="1" height="1" frameX="-0" frameY="-0" frameWidth="417" frameHeight="144"/>
+	<SubTexture name="sparkle0023" x="265" y="142" width="36" height="24" frameX="-60" frameY="-30" frameWidth="417" frameHeight="144"/>
+</TextureAtlas>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="welcomeBack.png" width="1238" height="1451">
+	<SubTexture name="1welcome0000" x="827" y="1230" width="266" height="43" frameX="-5" frameY="-25" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="2back0000" x="827" y="1090" width="368" height="137" frameX="-5" frameY="-25" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="2back0001" x="827" y="1230" width="266" height="43" frameX="-5" frameY="-25" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="blank0000" x="1" y="1" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="fade0000" x="1" y="364" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="fade0001" x="414" y="1" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="fade0002" x="414" y="364" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="fade0003" x="1" y="727" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="fade0004" x="414" y="727" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="fade0006" x="827" y="1" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="glitch0000" x="827" y="364" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="glitch0001" x="827" y="727" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="glitch0002" x="1" y="1090" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+	<SubTexture name="glitch0003" x="414" y="1090" width="410" height="360" frameX="-0" frameY="-0" frameWidth="410" frameHeight="360"/>
+</TextureAtlas>

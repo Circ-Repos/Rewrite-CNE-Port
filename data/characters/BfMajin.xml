@@ -1,0 +1,20 @@
+<!DOCTYPE codename-engine-character>
+<character x="-90" icon="bf-model-icon" camx="360" y="100" camy="500" scale="3.1" color="#0073FF" isPlayer="true" flipX="true" holdTime="3" antialiasing="false" sprite="characters/Bfmajin">
+	<anim loop="true" x="-89.03" fps="30" y="-108.06" anim="idle" name="idle"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="singLEFT" name="singLEFT"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="singDOWN" name="singDOWN"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="singUP" name="singUP"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="singRIGHT" name="singRIGHT"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="miss" name="singDOWNmiss"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="miss" name="singLEFTmiss"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="miss" name="singRIGHTmiss"/>
+
+	<anim loop="false" x="-89.03" fps="30" y="-108.06" anim="miss" name="singUPmiss"/>
+</character>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="rewriteEyes.png" width="1140" height="1064">
+	<SubTexture name="corpse0000" x="977" y="256" width="127" height="20" frameX="-136" frameY="-174" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0001" x="977" y="227" width="135" height="26" frameX="-135" frameY="-168" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0002" x="969" y="418" width="156" height="46" frameX="-126" frameY="-148" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0003" x="977" y="157" width="162" height="67" frameX="-120" frameY="-127" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0004" x="969" y="314" width="162" height="101" frameX="-120" frameY="-93" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0005" x="968" y="471" width="162" height="139" frameX="-120" frameY="-55" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0006" x="803" y="471" width="162" height="154" frameX="-120" frameY="-40" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpse0007" x="803" y="471" width="162" height="154" frameX="-120" frameY="-40" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpseLoop0000" x="803" y="628" width="162" height="154" frameX="-120" frameY="-40" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpseLoop0001" x="803" y="785" width="162" height="154" frameX="-120" frameY="-40" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpseLoop0002" x="803" y="628" width="162" height="154" frameX="-120" frameY="-40" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="corpseLoop0003" x="803" y="471" width="162" height="154" frameX="-120" frameY="-40" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0000" x="803" y="471" width="162" height="154" frameX="-120" frameY="-40" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0001" x="803" y="157" width="171" height="154" frameX="-111" frameY="-40" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0002" x="803" y="314" width="163" height="154" frameX="-120" frameY="-40" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0003" x="496" y="909" width="160" height="147" frameX="-117" frameY="-43" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0004" x="1" y="909" width="162" height="154" frameX="-120" frameY="-40" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0005" x="166" y="909" width="162" height="154" frameX="-120" frameY="-40" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0006" x="803" y="1" width="182" height="153" frameX="-100" frameY="-41" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="glitchCorpse0007" x="331" y="909" width="162" height="154" frameX="-120" frameY="-40" frameWidth="397" frameHeight="224"/>
+	<SubTexture name="introMask0000" x="1" y="1" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0001" x="1" y="228" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0002" x="402" y="1" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0003" x="402" y="228" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0004" x="1" y="455" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0005" x="402" y="455" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0006" x="1" y="682" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+	<SubTexture name="introMask0007" x="402" y="682" width="398" height="224" frameX="-0" frameY="-0" frameWidth="398" frameHeight="224"/>
+</TextureAtlas>

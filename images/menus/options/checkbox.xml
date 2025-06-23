@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 DEV https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="checkbox.png" width="134" height="25" spritePadding="2" borderPadding="2">
+	<SubTexture name="checkboxNO" x="2" y="2" width="64" height="21" frameX="0" frameY="0" frameWidth="64" frameHeight="21"/>
+	<SubTexture name="checkboxYES" x="68" y="2" width="64" height="21" frameX="0" frameY="0" frameWidth="64" frameHeight="21"/>
+</TextureAtlas>

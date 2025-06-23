@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 DEV https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="galleryEmotes.png" width="3136" height="670" spritePadding="1" borderPadding="1">
+	<SubTexture name="book0000" x="2198" y="226" width="179" height="214" frameX="-74" frameY="-10" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0001" x="1662" y="226" width="181" height="215" frameX="-73" frameY="-9" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0002" x="2378" y="226" width="178" height="215" frameX="-74" frameY="-9" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0003" x="2557" y="226" width="178" height="214" frameX="-68" frameY="-10" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0004" x="2736" y="226" width="178" height="211" frameX="-60" frameY="-13" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0005" x="2915" y="226" width="178" height="210" frameX="-58" frameY="-14" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0006" x="963" y="1" width="241" height="212" frameX="0" frameY="-12" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0007" x="1205" y="1" width="241" height="212" frameX="0" frameY="-12" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0008" x="1894" y="1" width="225" height="209" frameX="0" frameY="-15" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0009" x="2537" y="1" width="209" height="208" frameX="0" frameY="-16" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0010" x="2330" y="1" width="206" height="213" frameX="0" frameY="-11" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0011" x="1672" y="1" width="221" height="222" frameX="0" frameY="-2" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0012" x="244" y="1" width="241" height="224" frameX="-5" frameY="0" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0013" x="1" y="1" width="242" height="224" frameX="-14" frameY="0" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0014" x="486" y="1" width="240" height="224" frameX="-16" frameY="0" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0015" x="727" y="1" width="235" height="224" frameX="-21" frameY="0" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0016" x="1447" y="1" width="224" height="224" frameX="-32" frameY="0" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="book0017" x="2120" y="1" width="209" height="211" frameX="-47" frameY="0" frameWidth="242" frameHeight="224"/>
+	<SubTexture name="hand0000" x="763" y="226" width="179" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0001" x="943" y="226" width="179" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0002" x="1123" y="226" width="179" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0003" x="1483" y="226" width="178" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0004" x="2021" y="226" width="176" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0005" x="1" y="448" width="169" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0006" x="338" y="448" width="164" height="221" frameX="0" frameY="-3" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0007" x="668" y="448" width="163" height="221" frameX="0" frameY="-3" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0008" x="171" y="448" width="166" height="221" frameX="0" frameY="-3" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0009" x="832" y="448" width="162" height="221" frameX="0" frameY="-3" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0010" x="503" y="448" width="164" height="221" frameX="0" frameY="-3" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0011" x="1844" y="226" width="176" height="221" frameX="0" frameY="-3" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hand0012" x="1303" y="226" width="179" height="219" frameX="0" frameY="-5" frameWidth="179" frameHeight="221"/>
+	<SubTexture name="hype0000" x="2747" y="1" width="193" height="216" frameX="0" frameY="-8" frameWidth="193" frameHeight="218"/>
+	<SubTexture name="hype0001" x="194" y="226" width="190" height="217" frameX="0" frameY="-7" frameWidth="193" frameHeight="218"/>
+	<SubTexture name="hype0002" x="575" y="226" width="187" height="218" frameX="0" frameY="-6" frameWidth="193" frameHeight="218"/>
+	<SubTexture name="hype0003" x="385" y="226" width="189" height="218" frameX="0" frameY="-6" frameWidth="193" frameHeight="218"/>
+	<SubTexture name="hype0004" x="1" y="226" width="192" height="216" frameX="0" frameY="-8" frameWidth="193" frameHeight="218"/>
+	<SubTexture name="hype0005" x="2941" y="1" width="193" height="216" frameX="0" frameY="-8" frameWidth="193" frameHeight="218"/>
+	<SubTexture name="talk0000" x="2413" y="448" width="123" height="216" frameX="-18" frameY="-8" frameWidth="126" frameHeight="216"/>
+	<SubTexture name="talk0001" x="2036" y="448" width="125" height="216" frameX="-16" frameY="-8" frameWidth="126" frameHeight="216"/>
+	<SubTexture name="talk0002" x="2162" y="448" width="125" height="215" frameX="-17" frameY="-9" frameWidth="126" frameHeight="216"/>
+	<SubTexture name="talk0003" x="1909" y="448" width="126" height="215" frameX="-18" frameY="-9" frameWidth="126" frameHeight="216"/>
+	<SubTexture name="talk0004" x="2537" y="448" width="123" height="215" frameX="-20" frameY="-9" frameWidth="126" frameHeight="216"/>
+	<SubTexture name="talk0005" x="2288" y="448" width="124" height="216" frameX="-18" frameY="-8" frameWidth="126" frameHeight="216"/>
+	<SubTexture name="sad0000" x="2661" y="448" width="118" height="141" frameX="-19" frameY="-83" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="sad0001" x="2780" y="448" width="118" height="140" frameX="-19" frameY="-84" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="sad0002" x="2780" y="448" width="118" height="140" frameX="-19" frameY="-84" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="sad0003" x="2899" y="448" width="118" height="140" frameX="-19" frameY="-84" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="sad0004" x="3018" y="448" width="117" height="141" frameX="-19" frameY="-83" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="sad0005" x="3018" y="448" width="117" height="141" frameX="-19" frameY="-83" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="sad0006" x="2661" y="448" width="118" height="141" frameX="-19" frameY="-83" frameWidth="118" frameHeight="141"/>
+	<SubTexture name="shy0000" x="1311" y="448" width="154" height="211" frameX="0" frameY="-13" frameWidth="158" frameHeight="212"/>
+	<SubTexture name="shy0001" x="1617" y="448" width="148" height="212" frameX="-4" frameY="-12" frameWidth="158" frameHeight="212"/>
+	<SubTexture name="shy0002" x="1766" y="448" width="142" height="212" frameX="-9" frameY="-12" frameWidth="158" frameHeight="212"/>
+	<SubTexture name="shy0003" x="1466" y="448" width="150" height="212" frameX="-5" frameY="-12" frameWidth="158" frameHeight="212"/>
+	<SubTexture name="shy0004" x="995" y="448" width="158" height="212" frameX="0" frameY="-12" frameWidth="158" frameHeight="212"/>
+	<SubTexture name="shy0005" x="1154" y="448" width="156" height="212" frameX="0" frameY="-12" frameWidth="158" frameHeight="212"/>
+</TextureAtlas>
