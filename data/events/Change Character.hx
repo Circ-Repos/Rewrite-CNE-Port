@@ -19,7 +19,6 @@ function postCreate() {
 
 			// le code
 			charMap[strumIndex][charIndex].set(char.curCharacter, char);
-			if(FlxG.save.data.DevModeTracing) trace('Preexisting index "' + charIndex + '" character "' + char.curCharacter + '" on strumLine "' + strumIndex + '".');
 		}
 	}
 	// precache
@@ -41,7 +40,6 @@ public function precacheCharacter(strumIndex:Int, charName:String = 'bf', member
 		var newChar:Character = new Character(existingChar.x, existingChar.y, charName, existingChar.isPlayer);
 		charMap[strumIndex][memberIndex].set(newChar.curCharacter, newChar);
 		newChar.active = false;
-		if(FlxG.save.data.DevModeTracing) trace('Precached index "' + memberIndex + '" character "' + newChar.curCharacter + '" on strumLine "' + strumIndex + '".');
 
 		try { // sometimes this works because atlases lmao
 			if (newChar.animateAtlas != null) newChar.animateAtlas.drawComplex(FlxG.camera);
@@ -105,7 +103,6 @@ public function changeCharacter(strumIndex:Int, charName:String = 'bf', memberIn
 	newChar.playAnim(oldChar.animation?.name, true, oldChar.lastAnimContext);
 	newChar.animation?.curAnim?.curFrame = oldChar.animation?.curAnim?.curFrame;
 	strumLines.members[strumIndex].characters[memberIndex] = newChar;
-	if(FlxG.save.data.DevModeTracing) trace('Character index "' + memberIndex + '" changed to "' + newChar.curCharacter + '" on strumLine "' + strumIndex + '"!');
 	scripts.call('onChangeCharacter', [oldChar, newChar, strumIndex, memberIndex]);
 }
 

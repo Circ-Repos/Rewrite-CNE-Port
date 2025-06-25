@@ -23,6 +23,8 @@ function postStateSwitch(){ //post is more consistent than pre
 	// title
 	window.title = windowTitle;
 	//icon window
+	window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('iconGame'))));
+
 }
 /*
 function preStateSwitch(){

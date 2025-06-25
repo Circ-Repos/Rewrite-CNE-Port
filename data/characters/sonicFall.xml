@@ -1,8 +1,28 @@
 <!DOCTYPE codename-engine-character>
-<character x="20" icon="sonic-icon" camx="-320" y="100" scale="3.1" camy="140" color="#1414FF" antialiasing="false" holdTime="2.8" sprite="characters/sonicFall">
-	<anim loop="true" x="-89.0322580645161" y="-108.064516129032" fps="30" anim="idle" name="idle"/>
-	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="down" name="singDOWN"/>
-	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="left" name="singLEFT"/>
-	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="right" name="singRIGHT"/>
-	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="up" name="singUP"/>
+<character x="90" y="90" camx="127" icon="sonic-icon" camy="360" scale="3" color="#1414FF" holdTime="2.7" antialiasing="false" sprite="characters/sonicWurugashikai">
+	<anim x="-92" loop="true" anim="idle" fps="30" y="-111.666666666667" name="idle"/>
+
+	<anim x="-92" anim="down" fps="30" y="-111.666666666667" name="singDOWN"/>
+
+	<anim x="-92" anim="left" fps="30" y="-111.666666666667" name="singLEFT"/>
+
+	<anim x="-92" anim="right" fps="30" y="-111.666666666667" name="singRIGHT"/>
+
+	<anim x="-92" anim="up" fps="30" y="-111.666666666667" name="singUP"/>
+
+	<anim x="-91.6666666666667" anim="0_" fps="30" y="-111.666666666667" name="ringCollect"/>
+
+	<anim x="-10.3333333333333" anim="transition" fps="33" y="-124" name="transform"/>
+
+	<anim x="-91.6666666666667" anim="swap" fps="30" y="-111.666666666667" name="exeswap"/>
+
+	<anim x="-92" loop="true" anim="lalala" fps="30" y="-111.666666666667" name="lalala"/>
+
+	<anim x="-92" loop="true" anim="ring" fps="30" y="-111.666666666667" name="ring"/>
+
+	<anim x="-92" anim="urTheOne" fps="30" y="-111.666666666667" name="urTheOne"/>
+
+	<anim x="-92" loop="true" anim="shoot0" fps="30" y="-111.666666666667" name="shootIdle" indices="0,0"/>
+
+	<anim x="-92" anim="shoot0" fps="30" y="-111.666666666667" name="shoot"/>
 </character>

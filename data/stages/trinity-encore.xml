@@ -35,9 +35,9 @@
 		<anim name="idle" anim="idle" fps="24" loop="true"/>
 	</sprite>
 
-	<!-- REWRITE -->
+	<!-- REWRITE --> 
 	<sprite name="stageskyR" sprite="ghsky" x="100" y="-50" scale="5" scrollx="0" scrolly="0" antialiasing="false" alpha="0.001"/>
-	<sprite name="stagebackR" sprite="ghback" x="180" y="310" scale="3" scrollx="0.5" scrolly="0.5" antialiasing="false" alpha="0.001"/>
+	<sprite name="stagebackR" sprite="ghback" x="90" y="280" scale="3" scrollx="0.5" scrolly="0.5" antialiasing="false" alpha="0.001"/>
 	<sprite name="stageobjR" sprite="objects" x="70" y="325" scale="3" scrollx="0.6" scrolly="0.6" antialiasing="false" alpha="0.001"/>
 	<sprite name="stagegroundR" sprite="ghstage" x="100" y="350" scale="3" scrollx="0.9" scrolly="0.9" antialiasing="false" alpha="0.001"/>
 	<sprite name="stagestuffR" sprite="animals" x="80" y="300" scale="3" scrollx="0.8" scrolly="0.8" antialiasing="false" alpha="0.001" type="loop">
