@@ -10,7 +10,7 @@ var lockOnSpeed:Float = 0.07;
 var returnTimer = new FlxTimer();
 
 function onNoteHit(_) {
-    if(camMove){
+    if(!camLock && camMove){
         if(_.player){
             if(curCameraTarget != 0) {
                 if(returnTimer != null) returnTimer.cancel();

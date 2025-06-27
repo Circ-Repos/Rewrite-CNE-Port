@@ -1,8 +1,12 @@
 <!DOCTYPE codename-engine-character>
-<character x="-120" icon="lord_X-icon" camx="200" y="400" scale="3.1" camy="-200" color="#2814FF" antialiasing="false" holdTime="3" sprite="characters/LordXB">
+<character x="-220" y="240" camx="190" icon="lord_X-icon" camy="320" scale="3.1" color="#2814FF" antialiasing="false" holdTime="3" sprite="characters/LordXB">
 	<anim loop="true" x="-89.0322580645161" y="-108.064516129032" fps="30" anim="idle" name="idle"/>
+
 	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singLEFT" name="singLEFT"/>
+
 	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singDOWN" name="singDOWN"/>
+
 	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singUP" name="singUP"/>
+
 	<anim x="-89.0322580645161" y="-108.064516129032" fps="30" anim="singRIGHT" name="singRIGHT"/>
 </character>

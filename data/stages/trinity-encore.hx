@@ -2,6 +2,8 @@ import hxvlc.flixel.FlxVideoSprite;
 import flixel.addons.display.FlxBackdrop;
 import funkin.backend.system.framerate.Framerate;
 import openfl.display.BlendMode;
+import openfl.Lib;
+import openfl.system.Capabilities;
 import cpp.Lib; //mmmmmmmm lib why arent you imported by default
 // previously the video playing script was stolen from a silly billy port. THAT CHANGES NOW.
 // NO MORE RANDOM CRASHES. IT'S TIME.
@@ -34,6 +36,10 @@ var windowShakeStrength:Float = 12;
 var maxWidth:Int = 1920;
 var maxHeight:Int = 1080;
 var windowLock:Bool = true;
+//shaders
+var glitchShader:CustomShader;
+var itime:Float = 0;
+var activeTimers:Array<{tag:String, time:Float, callback:Void->Void}> = [];
 
 // Safeties
 var safetyNet1:Bool = false;
@@ -66,7 +72,8 @@ var stopUpdatingDummy4:Bool = false;
 var stopUpdatingDummyFFS:Bool = false;
 var noMoreDeath:Bool = false;
 var allowWinTween:Bool = false;
-
+var screen = Capabilities.screenResolutionX;
+var screenH = Capabilities.screenResolutionY;
 // Visual tuning
 var brightness:Float = 0.00;
 var contrast:Float = 1.00;
@@ -79,14 +86,14 @@ var internalBGBop:Bool = false;
 var internalGradient:FlxSprite;
 var internalShaderUpdate:Bool = true;
 var internalFlipShiet:Bool = false;
-
+var internalOverlay:FlxSprite;
 var startSong:Bool = false;
 var beat:Int = 0;
 
 // Common flags
 var downscroll:Bool = false;
 var lowQuality:Bool = false;
-var shadersEnabled:Bool = false;
+var shadersEnabled:Bool = true;
 
 var majinVideo:FlxVideoSprite;
 var xVideo:FlxVideoSprite;
@@ -98,6 +105,7 @@ var videosToDestroy:Array<FlxVideoSprite> = [];
 var texture:String = "NOTE_assets";
 var camOther = new FlxCamera();
 var camVideo = new FlxCamera();
+var camNotes = new HudCamera();
 var ogWinX:Int = 1280;
 var ogWinY:Int = 720;
 
@@ -138,7 +146,21 @@ var rewriteWindowBox:FlxSprite;
 var windowVessel:FlxSprite;
 var windowBlack:FlxSprite;
 var iAmGod:FlxSprite;
-
+public var camLock:Bool = false;
+function onPostStrumCreation() {
+      for (e in strumLines.members[1]) {
+            e.camera = camNotes;
+      }
+    }
+function runTimer(tag:String, duration:Float, ?callback:Void->Void) {
+	activeTimers.push({
+		tag: tag,
+		time: duration,
+		callback: callback != null ? callback : function() {
+			onTimerCompleted(tag);
+		}
+	});
+}
 function getCamera(camName:String):FlxCamera {
     switch (camName) {
         case "camGame":
@@ -149,6 +171,8 @@ function getCamera(camName:String):FlxCamera {
             return camOther;
         case "camVideo":
             return camVideo;
+        case "camNotes":
+            return camNotes;
         default:
             return camGame;
     }
@@ -215,7 +239,24 @@ function setObjectOrder(obj:String, position:Int, ?group:String = null){
 			luaTrace('setObjectOrder: Object $obj doesn\'t exist!', false, false, FlxColor.RED);
 		});
  */
-function create() {
+ function create(){
+        glitchShader = new CustomShader("glitch");
+
+    PlayState.instance.introLength = 3; //just so shit can precache
+    for (i in 0...15) {
+        Paths.image("modelSwap/" + i); // Preload image to cache it
+    }
+}
+ function postCreate() {
+    glitchIntro = new FlxSprite(0, 0);
+    glitchIntro.loadGraphic(Paths.image("modelSwap/0"));
+    glitchIntro.antialiasing = false;
+    glitchIntro.alpha = 0.001;
+    glitchIntro.setGraphicSize(Std.int(glitchIntro.width * 3.22), Std.int(glitchIntro.height * 3.22));
+    glitchIntro.updateHitbox();
+    glitchIntro.cameras = [camHUD];
+    add(glitchIntro);
+
     shakeLevelMinVar = new FlxSprite();
     shakeLevelMinVar.alpha = 0.01;
     add(shakeLevelMinVar);
@@ -223,7 +264,6 @@ function create() {
     shakeLevelMaxVar.alpha = 0.01;
     add(shakeLevelMaxVar);
     FlxG.autoPause = true;
-    PlayState.instance.introLength = 3; //just so shit can precache
     camGame.alpha = 0;
     var winX:Int = 820;
     var winY:Int = 720;
@@ -231,150 +271,22 @@ function create() {
     FlxG.resizeGame(winX, winY);
     FlxG.scaleMode.width = winX;
     FlxG.scaleMode.height = winY;
-    FlxG.camera.setSize(winX, winY);
-    camHUD.setSize(winX, winY);
-    camHUD.setPosition(0,0);
-    FlxG.camera.setPosition(0,0);
-    FlxG.cameras.add(camOther, false);
+    FlxG.cameras.insert(camOther, FlxG.cameras.list.indexOf(camGame) + 1, false);
     camOther.bgColor = 0;
     camOther.alpha = 1;
-    FlxG.cameras.add(camVideo, false);
+    camOther.setSize(winX, winY);
+    FlxG.cameras.insert(camNotes, FlxG.cameras.list.indexOf(camGame) + 3, false); //+5 to make sure its high enough
+    camNotes.bgColor = 0;
+    camNotes.alpha = 1;
+    camNotes.setSize(winX, winY);
+    FlxG.cameras.insert(camVideo, FlxG.cameras.list.indexOf(camNotes) - 1, false);
     camVideo.bgColor = 0;
     camVideo.alpha = 1;
-    camOther.setSize(winX, winY);
+    camGame.setSize(winX, winY);
+    camHUD.setSize(winX, winY);
+    camHUD.setPosition(0,0);
+    camGame.setPosition(0,0);
 
-}
-var wasFocused:Bool = true;
-
-function postUpdate(elapsed:Float) {
-
-    sa2PosingShadow.x = sa2Posing.x;
-    sa2Posing2Shadow.x = sa2Posing2.x;
-
-    if (rewriteHeadCorpse.animation.curAnim != null && rewriteHeadCorpse.animation.curAnim.finished) {
-        if (rewriteHeadCorpse.animation.curAnim.name == "corpse0" && !stopUpdatingDummy) {
-            rewriteHeadCorpse.animation.play("corpseLoop", false, false, 0);
-            stopUpdatingDummy = true;
-        }
-    }
-
-    if (fella1.animation.curAnim != null && fella1.animation.curAnim.finished) {
-        if (fella1.animation.curAnim.name == "rise" && !stopUpdatingDummy2) {
-            fella1.animation.play("loop", true, false, 0);
-            stopUpdatingDummy2 = true;
-        }
-    }
-
-    if (fella2.animation.curAnim != null && fella2.animation.curAnim.finished) {
-        if (fella2.animation.curAnim.name == "rise" && !stopUpdatingDummy3) {
-            fella2.animation.play("loop", true, false, 0);
-            stopUpdatingDummy3 = true;
-        }
-    }
-
-    if (fella3.animation.curAnim != null && fella3.animation.curAnim.finished) {
-        if (fella3.animation.curAnim.name == "rise" && !stopUpdatingDummy4) {
-            fella3.animation.play("loop", true, false, 0);
-            stopUpdatingDummy4 = true;
-        }
-    }
-    if (curStep >= 2892 && curStep < 2896) {
-        windowLock = false;
-
-        // Set window opacity (if supported)
-        if (window != null) {
-            window.opacity = 1;
-            window.title = "";
-            window.x = windowOriginX + FlxG.random.float(-500, 500);
-            window.y = windowOriginY + FlxG.random.float(-150, 150);
-        }
-
-        FlxG.autoPause = true;
-    }
-
-    shakeLevelMin = shakeLevelMinVar.x;
-    shakeLevelMax = shakeLevelMaxVar.x;
-
-    if (pillarWipe.animation.curAnim != null && pillarWipe.animation.curAnim.name == "wipe" && pillarWipe.animation.curAnim.curFrame == 3 && !stopUpdatingDummyFFS) {
-        fullScreenIntro.kill();
-        fullScreenIntro.exists = false;
-
-        FlxTween.color(fullScreenIntroBG, 0.01, fullScreenIntroBG.color, FlxColor.fromString("0xFF100410"), {ease: FlxEase.linear});
-        fullScreenRunning.alpha = 0;
-
-        new FlxTimer().start(0.01, function(tmr:FlxTimer) {
-            pillarWipe.kill();
-            pillarWipe.exists = false;
-        });
-
-        FlxTween.tween(sa2Posing, {x: 500}, 0.15, {ease: FlxEase.linear});
-        FlxTween.tween(sa2Posing2, {x: 300}, 0.15, {ease: FlxEase.linear});
-
-        stopUpdatingDummyFFS = true;
-    }
-
-        for(i in videoArray){
-            if(i != null && i.alpha != 1) //IM SO FUCKING DONE WITH THE AUTOPAUSE NOT WORKING
-                i.pause();
-        }
-        if (FlxG.focused != wasFocused) {
-        if (FlxG.focused) {
-            // The window was just refocused
-            trace("Window refocused!");
-            resumeVideos();
-        } else {
-            // The window was just unfocused
-            trace("Window unfocused!");
-            pauseVideos();
-        }
-        wasFocused = FlxG.focused;
-    }
-    for (i in videoArray) if (i.alpha == 1) i.screenCenter();
-
-    // safety net bullshit thank you snow for the idea
-    if (videosToDestroy.length > 0) for (i in videosToDestroy) if (i != null){
-        i.alpha = 0.5;
-        i.destroy();
-    }
-    for(i in 0...playerStrums.length) playerStrums.members[i].noteAngle = 0;
-
-}
-function pauseVideos(){
-        for (i in videoArray){
-        if (i != null) i.pause();
-
-    }
-}
-function resumeVideos(){
-    for (i in videoArray){
-        if (i != null && i.alpha == 1) i.resume();
-    }
-}
-function onSubstateOpen() for (i in videoArray) pauseVideos();
-function onSubstateClose() for (i in videoArray) resumeVideos();
-function onFucusLost() {
-    for (i in videoArray) if (i != null) i.pause();
-}
-function onFocus() {
-    if (!FlxG.paused) {
-        for (i in videoArray) if (i != null && i.alpha == 1) i.resume();
-    }
-}
-//function onCountdown(event) event.cancel();
-function fusionAAA(){
-    playVideo(fusionVideo, 25.25, 1); // 25.45
-}
-function destroy() {
-    FlxG.resizeWindow(ogWinX, ogWinY);
-    FlxG.resizeGame(ogWinX, ogWinY);
-    FlxG.scaleMode.width = ogWinX;
-    FlxG.scaleMode.height = ogWinY;
-    FlxG.camera.setSize(ogWinX, ogWinY);
-    window.fullscreen = false;
-    window.resizable = true;
-    window.borderless = false;
-}
-function postCreate() {
     Framerate.debugMode = 0;
     healthBar.alpha = 0;
     healthBarBG.alpha = 0;
@@ -416,7 +328,6 @@ function postCreate() {
     //modchart script just convertedd
 
 }
-
 function snowPostCreate(){
     window.fullscreen = false;
     window.resizable = false;
@@ -473,7 +384,7 @@ function snowPostCreate(){
     desktopRift.antialiasing = false;
     desktopRift.alpha = 0.001;
     desktopRift.scrollFactor.set(0, 0);
-    desktopRift.setGraphicSize(Std.int(desktopRift.width * 2.5));
+    desktopRift.setGraphicSize(desktopRift.width * 2.5);
     add(desktopRift);
 
     desktopRiftMask = new FlxSprite(-275, -160);
@@ -484,7 +395,7 @@ function snowPostCreate(){
     desktopRiftMask.antialiasing = false;
     desktopRiftMask.alpha = 0.001;
     desktopRiftMask.scrollFactor.set(0, 0);
-    desktopRiftMask.setGraphicSize(Std.int(desktopRiftMask.width * 2.5));
+    desktopRiftMask.setGraphicSize(desktopRiftMask.width * 2.5);
     add(desktopRiftMask);
 
     rewriteCutscene = new FlxSprite(0, 0);
@@ -767,7 +678,7 @@ function snowPostCreate(){
     rewriteWindowBox.scrollFactor.set(0, 0);
     rewriteWindowBox.setGraphicSize(rewriteWindowBox.width * 2.4, rewriteWindowBox.height * 2.4);
     rewriteWindowBox.updateHitbox();
-    insert(members.indexOf(boyfriend) + 7, rewriteWindowBox);
+    insert(99, rewriteWindowBox);
 
     bfMask = new FlxSprite(-290, -215).loadGraphic(Paths.image("bfMask"));
     bfMask.antialiasing = false;
@@ -938,6 +849,169 @@ function snowPostCreate(){
     iAmGod.y = 535;
 
 }
+var wasFocused:Bool = true;
+function onCameraMove(event){
+    if(camLock){
+        event.cancel();
+        return;
+    }
+}
+function update(elapsed:Float){
+    for (i in 0...activeTimers.length) {
+	var timer = activeTimers[i];
+	timer.time -= elapsed;
+	if (timer.time <= 0) {
+		timer.callback();
+		activeTimers.remove(timer);
+		break;
+	}
+}
+    itime+=elapsed;
+    glitchShader.iTime = itime;
+}
+function postUpdate(){
+    camNotes.zoom = camHUD.zoom;
+    camNotes.alpha = camHUD.alpha;
+    sa2PosingShadow.x = sa2Posing.x;
+    sa2Posing2Shadow.x = sa2Posing2.x;
+
+    if (rewriteHeadCorpse.animation.curAnim != null && rewriteHeadCorpse.animation.curAnim.finished) {
+        if (rewriteHeadCorpse.animation.curAnim.name == "corpse0" && !stopUpdatingDummy) {
+            rewriteHeadCorpse.animation.play("corpseLoop", false, false, 0);
+            stopUpdatingDummy = true;
+        }
+    }
+
+    if (fella1.animation.curAnim != null && fella1.animation.curAnim.finished) {
+        if (fella1.animation.curAnim.name == "rise" && !stopUpdatingDummy2) {
+            fella1.animation.play("loop", true, false, 0);
+            stopUpdatingDummy2 = true;
+        }
+    }
+
+    if (fella2.animation.curAnim != null && fella2.animation.curAnim.finished) {
+        if (fella2.animation.curAnim.name == "rise" && !stopUpdatingDummy3) {
+            fella2.animation.play("loop", true, false, 0);
+            stopUpdatingDummy3 = true;
+        }
+    }
+
+    if (fella3.animation.curAnim != null && fella3.animation.curAnim.finished) {
+        if (fella3.animation.curAnim.name == "rise" && !stopUpdatingDummy4) {
+            fella3.animation.play("loop", true, false, 0);
+            stopUpdatingDummy4 = true;
+        }
+    }
+    if (curStep >= 2892 && curStep < 2896) {
+        windowLock = false;
+
+        // Set window opacity (if supported)
+        if (window != null) {
+            window.opacity = 1;
+            window.title = "";
+            window.x = windowOriginX + FlxG.random.float(-500, 500);
+            window.y = windowOriginY + FlxG.random.float(-150, 150);
+        }
+
+        FlxG.autoPause = true;
+    }
+
+    shakeLevelMin = shakeLevelMinVar.x;
+    shakeLevelMax = shakeLevelMaxVar.x;
+
+    if (pillarWipe.animation.curAnim != null && pillarWipe.animation.curAnim.name == "wipe" && pillarWipe.animation.curAnim.curFrame == 3 && !stopUpdatingDummyFFS) {
+        fullScreenIntro.kill();
+        fullScreenIntro.exists = false;
+
+        FlxTween.color(fullScreenIntroBG, 0.01, fullScreenIntroBG.color, FlxColor.fromString("0xFF100410"), {ease: FlxEase.linear});
+        fullScreenRunning.alpha = 0;
+
+        runTimer('removePillar', 0.01);
+
+
+        FlxTween.tween(sa2Posing, {x: 500}, 0.15, {ease: FlxEase.linear});
+        FlxTween.tween(sa2Posing2, {x: 300}, 0.15, {ease: FlxEase.linear});
+
+        stopUpdatingDummyFFS = true;
+    }
+
+        for(i in videoArray){
+            if(i != null && i.alpha != 1) //IM SO FUCKING DONE WITH THE AUTOPAUSE NOT WORKING
+                i.pause();
+        }
+        if (FlxG.focused != wasFocused) {
+        if (FlxG.focused) {
+            resumeVideos();
+        } else {
+            pauseVideos();
+        }
+        wasFocused = FlxG.focused;
+    }
+    for (i in videoArray) if (i.alpha == 1) i.screenCenter();
+
+    // safety net bullshit thank you snow for the idea
+    if (videosToDestroy.length > 0) for (i in videosToDestroy) if (i != null){
+        i.alpha = 0.5;
+        i.destroy();
+    }
+    for(i in 0...playerStrums.length) playerStrums.members[i].noteAngle = 0;
+
+}
+function pauseVideos(){
+    for (i in videoArray){
+        if (i != null) i.pause();
+
+    }
+}
+function resumeVideos(){
+    for (i in videoArray){
+        if (i != null && i.alpha == 1) i.resume();
+    }
+}
+function onSubstateOpen() for (i in videoArray) pauseVideos();
+function onSubstateClose() for (i in videoArray) resumeVideos();
+function onFucusLost() {
+    for (i in videoArray) if (i != null) i.pause();
+}
+function onFocus() {
+    if (!FlxG.paused) {
+        for (i in videoArray) if (i != null && i.alpha == 1) i.resume();
+    }
+}
+//function onCountdown(event) event.cancel();
+function fusionAAA(){
+    playVideo(fusionVideo, 25.25, 1); // 25.45
+}
+function destroy() {
+    FlxG.resizeWindow(ogWinX, ogWinY);
+    FlxG.resizeGame(ogWinX, ogWinY);
+    FlxG.scaleMode.width = ogWinX;
+    FlxG.scaleMode.height = ogWinY;
+    FlxG.camera.setSize(ogWinX, ogWinY);
+    window.fullscreen = false;
+    window.resizable = true;
+    window.borderless = false;
+}
+
+var glitchIntro:FlxSprite;
+
+var glitchIntro:FlxSprite;
+var glitchFrame:Int = 1;
+function introGlitch(value1:String) {
+	if (value1 != "hide") {
+		glitchIntro.alpha = 1;
+		glitchIntro.visible = true;
+
+		glitchFrame++;
+		if (glitchFrame > 12) glitchFrame = 1;
+
+		glitchIntro.loadGraphic(Paths.image("modelSwap/" + glitchFrame));
+	} else {
+
+		glitchIntro.visible = false;
+        dad.screenCenter();
+	}
+}
 
 
 function ohImXingIt(){
@@ -980,7 +1054,8 @@ function playVideo(vid:FlxVideoSprite, endTime:Float, strumTime:Float)
 {
     if(vid == 'lxVideo'){
         camHUD.alpha = 1;
-        FlxG.camera.alpha = 1;
+        camGame.alpha = 1;
+        camNotes.alpha = 1;
     }
     camZooming = false;
     if(vid == fusionVideo){
@@ -999,7 +1074,7 @@ function playVideo(vid:FlxVideoSprite, endTime:Float, strumTime:Float)
 
     new FlxTimer().start(endTime / 1, function(tmr) {
         vid.alpha = 0.5;
-        if (vid == majinVideo) FlxG.camera.alpha = 1;
+        if (vid == majinVideo) camGame.alpha = 1;
         videosToDestroy.push(vid);
     });
 
@@ -1057,16 +1132,16 @@ function spinStrums(){ ///hi revisited code im kidnapping you
 }
 var tweenValue:Float = 7;
 function slowZoom(amt:Int, time:Int){
-    FlxG.camera.zoom = defaultCamZoom = FlxTween.num(defaultCamZoom, amt, time, {ease: FlxEase.sineOut}, function(v:Float)
+    camGame.zoom = defaultCamZoom = FlxTween.num(defaultCamZoom, amt, time, {ease: FlxEase.sineOut}, function(v:Float)
         {
-            FlxG.camera.zoom = defaultCamZoom = v;
+            camGame.zoom = defaultCamZoom = v;
         });
 }
 function setWindowTitle(windowTitle:String) window.title = windowTitle;
 function changeBG(v1:String){
     if(v1 == 'monitor'){
             defaultCamZoom = 1.25;
-            FlxG.camera.zoom = 1.25;
+            camGame.zoom = 1.25;
             boyfriend.y -= 100;
             stageskyMajinTV.alpha = 1;
             stagegroundMajinTV.alpha = 1;
@@ -1129,6 +1204,10 @@ function changeBG(v1:String){
             stagebackLX.alpha = 1;
         }
         if(v1 == 'rewrite'){
+            /*            boyfriend.y += 580;
+            dad.y += 220;
+            dad.x += 580;
+            boyfriend.x += 580;*/
                 boyfriend.y += 580;
                 dad.y += 220;
                 dad.x += 580;
@@ -1147,6 +1226,32 @@ function changeBG(v1:String){
 				stagegroundR.alpha = 1;
 				stageobjR.alpha = 1;
 				stagestuffR.alpha = 1;
+        }
+        if(v1 == 'void'){
+            boyfriend.y += 600;
+            dad.y += 250;
+            dad.x += 600;
+            boyfriend.x += 600;
+            stageskyR.alpha = 0.001;
+            stagebackR.alpha = 0.001;
+            stagegroundR.alpha = 0.001;
+            stageobjR.alpha = 0.001;
+            stagestuffR.alpha = 0.001;
+
+        }
+        if(v1 == 'lx2'){
+            if(lxVideo.alpha != 0) lxVideo.alpha = 0;
+            stagebackLX.alpha = 0.001;
+            if(FlxG.save.data.flashingLights){
+                stagebackLX2.alpha = 1;
+            }else{
+                stagebackLX2.alpha = 0.25;
+            }
+        }
+        if(v1 == 'internal'){ //this just for the cam mainly and to kill BF
+            slowZoom(0.9, 0.1);
+            boyfriend.alpha = 0.001; //bf is fucking died
+        
         }
 }
 /*function onEvent(e:String, v1:String, v2:String)
@@ -1335,9 +1440,9 @@ function doTweenWindow(tag:String, field:String, value:Float, duration:Float, ea
                     type: tweenType
                 }, function(v:Float) FlxG.resizeWindow(FlxG.width, Std.int(v)));
             case "x":
-                FlxTween.tween(window, {x: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
+                FlxTween.tween(Lib.application.window, {x: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
             case "y":
-                FlxTween.tween(window, {y: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
+                FlxTween.tween(Lib.application.window, {y: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
         }
     }
 }
@@ -1357,6 +1462,12 @@ var safteyNet2:Bool = false;
 var safteyNet4:Bool = false;
 var safetyNet3:Bool = false;
 function stepHit(step:Int){
+    if(curStep == 3790){
+        runTimer('glitch1', 0.05); 
+    }
+    if(curStep == 3837){
+        runTimer('rewriteCutsceneTransition', 0.04); // the timing is very precise,,,
+    }
     switch (step) {
         case 3924, 3956:
             lyricsPlaceholder.screenCenter(FlxAxes.X);
@@ -1412,6 +1523,7 @@ function stepHit(step:Int){
 
         case 3982:
             transColour.visible = true;
+            transColour.alpha = 1;
             camGame.visible = false;
             //aspect.visible = false;
 
@@ -1429,6 +1541,50 @@ function stepHit(step:Int){
             lyricsPlaceholder.exists = false;
     }
 
+    if (curStep == 2800) {
+        fakeCrash = new FlxSprite(250, 30);
+        fakeCrash.loadGraphic(Paths.image("crashScreen"));
+        fakeCrash.scrollFactor.set(0, 0);
+        fakeCrash.setGraphicSize(Std.int(fakeCrash.width * 3), Std.int(fakeCrash.height * 3));
+        fakeCrash.updateHitbox();
+        fakeCrash.antialiasing = false;
+        fakeCrash.cameras = [camOther];
+        add(fakeCrash, true);
+
+        window.title = "UH OH!";
+
+        dad.visible = true;
+    }
+
+    if (curStep == 2860) {
+        window.opacity = 0;
+        FlxG.autoPause = false;
+
+        camGame.alpha = 0;
+        camHUD.alpha = 0;
+        camOther.alpha = 0;
+    }
+
+    if (curStep == 2877) {
+        window.opacity = 1;
+        window.setPosition(
+            Std.int((screen - winWidth) / 2),
+            Std.int((screenH - winHeight) / 2)
+        );    
+    }
+
+    if (curStep == 2880) {
+        boyfriend.alpha = 1;
+
+        if (internalOverlay != null) remove(internalOverlay, false);
+        if (internalBG != null) remove(internalBG, false);
+        if (internalColour != null) remove(internalColour, true);
+        if (internalGradient != null) remove(internalGradient, true);
+        if (fakeCrash != null) remove(fakeCrash, true);
+        if (illegal != null) remove(illegal, true);
+    }
+
+
     if(step == 2496){
         stagebackLX2.alpha = 0.001;
         stagebackLX.alpha = 0.001;
@@ -1444,6 +1600,37 @@ function stepHit(step:Int){
         shapes.alpha = 1;
         floor.alpha = 1;
     }
+    if(step == 2779) internalBGBop = false;
+
+    if (curStep == 2784) {
+    dad.stunned = true;
+    windowLock = true;
+    pauseOverride = true;
+    canPause = false;
+
+    FlxG.stage.window.opacity = 1;
+
+    camHUD.alpha = 0;
+    internalShaderUpdate = false;
+
+    var illegal = new FlxSprite(270, 300);
+    illegal.loadGraphic(Paths.image('illegal'));
+    illegal.setGraphicSize(Std.int(illegal.width * 3.0), Std.int(illegal.height * 3.0));
+    illegal.antialiasing = false;
+    illegal.scrollFactor.set(0, 0);
+    illegal.cameras = [camOther];
+    add(illegal);
+    }
+
+    if (curStep == 2796) {
+        camGame.alpha = 0;
+        internalBG.alpha = 0;
+        if (internalOverlay != null) internalOverlay.alpha = 0;
+        internalGradient.alpha = 0;
+        internalColour.alpha = 0;
+        illegal.alpha = 0;
+    }
+
 
     if(step == 3840){
         stars.alpha = 0.001;
@@ -1476,7 +1663,7 @@ function stepHit(step:Int){
         //runHaxeCode('window.focus();')
         maxCamZoom = 10;
         defaultCamZoom = 7;
-        FlxG.camera.zoom = 7;
+        camGame.zoom = 7;
         //doTweenZoom("rewriteTime", "camGame", 1.1, 10, "sineInOut")
         camGame.alpha = 1;
         camOther.alpha = 1;
@@ -1556,14 +1743,15 @@ function stepHit(step:Int){
         //doTweenWindow('fullscreen2', 'height', maxHeight+1, 0.4,'quintIn',1);
         var winX:Int = 1280;
         var winY:Int = 720;
-        FlxG.resizeWindow(winX, winY);
+        FlxG.resizeWindow(1920, 1080); //Placeholder for the window size, you can change it to whatever you want
+        window.move(0,0);
         FlxG.resizeGame(winX, winY);
         FlxG.scaleMode.width = winX;
         FlxG.scaleMode.height = winY;
-        FlxG.camera.setSize(winX, winY);
+        camGame.setSize(winX, winY);
         camHUD.setSize(winX, winY);
         camHUD.setPosition(0,0);
-        FlxG.camera.setPosition(0,0);
+        camGame.setPosition(0,0);
         rewriteStomp.screenCenter();
         doTweenWindow('fullscreen3', 'x', 0, 0.4,'quintIn',1);
         doTweenWindow('fullscreen4', 'y', 0, 0.4,'quintIn',1);
@@ -1594,12 +1782,14 @@ function stepHit(step:Int){
 
     if (step >= 3660 && !fullscreenLagCheck3) {
         fullScreenIntro.animation.play("loop");
-        remove("rewriteStomp");
+        defaultCamZoom = 0.7;
+        camGame.zoom = 0.7;
+        remove("rewriteStomp", false);
         fullscreenLagCheck3 = true;
     }
 
     if (step >= 3664 && !fullscreenLagCheck4) {
-        FlxG.camera.flash(FlxColor.fromString("0xFFEEFAD5"), 0.25, false);
+        camGame.flash(FlxColor.fromString("0xFFEEFAD5"), 0.25, false);
         FlxTween.color(fullScreenIntroBG, 0.1, fullScreenIntroBG.color, FlxColor.fromString("0xFFEEFAD5"));        
         fullScreenIntro.alpha = 1;
         fullscreenLagCheck4 = true;
@@ -1613,7 +1803,6 @@ function stepHit(step:Int){
     if (step == 3692) {
         pillarWipe.alpha = 1;
         pillarWipe.animation.play("wipe", true);
-        pillarWipe.screenCenter(FlxAxes.X);
     }
 
     if (step == 3696) {
@@ -1633,7 +1822,14 @@ function stepHit(step:Int){
         FlxTween.tween(sa2PosingShadow, {alpha: 0}, 1.5, {ease: FlxEase.quadIn});
         FlxTween.tween(sa2Posing2Shadow, {alpha: 0}, 1.5, {ease: FlxEase.quadIn});
     }
+    if(curStep >= 4173 && !safetyNet5){
+        runTimer('rewriteWindow', 0.04); // the timing is very precise,,,
 
+        //cancelTween("sonicFallUp")
+        //cancelTween("sonicFallDown")
+        dad.y = dad.y -900;
+        safetyNet5 = true;
+    }
     if (step == 3768) {
         FlxTween.tween(sa2Posing, {x: 1280}, 0.25, {ease: FlxEase.quadIn});
         FlxTween.tween(sa2Posing2, {x: -1280}, 0.25, {ease: FlxEase.quadIn});
@@ -1648,6 +1844,8 @@ function stepHit(step:Int){
         safteyNet3 = true;
         dad.y += 900;
         transColour.makeGraphic(2500, 2000, 0xFF131313);
+        camGame.bgColor = 0xFF131313;
+        transColour.alpha = 1;
     }
     if (step == 3772) {
     FlxTween.tween(ring, {alpha: 1}, 0.45, {ease: FlxEase.quadInOut});
@@ -1656,11 +1854,21 @@ function stepHit(step:Int){
     FlxTween.tween(boyfriendRing, {y: 0}, 0.45, {ease: FlxEase.quadInOut});
     }
 
-    if (step == 3776) {
-        remove(ring);
-        remove(boyfriendRing);
-        remove(fullScreenIntroBG);
+    if (curStep == 4640) {
+        camHUD.alpha = 0;
+        camNotes.alpha = 0;
+
+        var screamer = iAmGodScreamer;
+        screamer.setGraphicSize(1280, 720);
+        screamer.x = 0;
+        screamer.alpha = 1;
+
+        FlxTween.color(screamer, 0.001, screamer.color, FlxColor.WHITE, {ease: FlxEase.linear});
+
+        if (FlxG.save.data.flashingLights)
+            runTimer("scarySonicColor1", 0.03);
     }
+
 
     if (step >= 3785 && step <= 3789) {
         transColour.makeGraphic(2500, 2000, FlxColor.BLACK);
@@ -1674,7 +1882,7 @@ function stepHit(step:Int){
     }
 
     if (step == 3792) {
-        camHUD.y = downscroll ? -720 : 720;
+        camNotes.y = downscroll ? -720 : 720;
 
         defaultCamZoom = 0.9;
         camGame.zoom = 0.9;
@@ -1682,29 +1890,99 @@ function stepHit(step:Int){
         camGame.visible = true;
 
         noteCheck = true;
+        slowZoom(0.9, 0.01);
+        dad.screenCenter(FlxAxes.X);
+
     }
 
     if (step >= 3920 && !safteyNet4){
+        
         lyricsPlaceholder.alpha = 1;
-
         desktopRift.animation.play("desktopRift");
         desktopRiftMask.animation.play("desktopRiftMask");
-
+        desktopRift.screenCenter(FlxAxes.X);
+        desktopRift.screenCenter(FlxAxes.Y);
+        desktopRiftMask.screenCenter();
         blackMask.alpha = 1;
         desktopRift.alpha = 1;
         desktopRiftMask.alpha = 1;
         redClouds.alpha = 1;
 
         if (shadersEnabled) {
-            trace('shader shit');
-            //desktopRift.shader = game.getShader("glitch");
+            desktopRift.shader = glitchShader;
         }
+        FlxTween.tween(camNotes, {y: 0}, 1.75, {ease: FlxEase.sineOut});
 
         FlxTween.tween(dad, {y: 200}, 0.75, {ease: FlxEase.sineOut});
+        camLock = true;
         FlxTween.tween(rewriteCutscene, {y: -730}, 0.75, {ease: FlxEase.quadIn});
 
         safetyNet4 = true;
 
     }
+
+    if (step == 2527) {
+    internalBGBop = true;
+    }
+
+    if (step == 2528) {
+        internalBG.alpha = 1;
+        if (internalOverlay != null) internalOverlay.alpha = 0.7;
+        internalGradient.alpha = 1;
+    }
+
+    if (internalBGBop && curStep % 2 == 0) {
+        internalBGBeat += 1;
+        if (internalBGBeat > 7) internalBGBeat = 0;
+
+        internalBG.animation.play(internalBGBeat, true);
+
+        if (internalFlipShiet) {
+            internalFlipShiet = false;
+            if (internalOverlay != null) internalOverlay.flipX = !internalOverlay.flipX;
+        } else {
+            internalFlipShiet = true;
+            if (internalOverlay != null) internalOverlay.flipY = !internalOverlay.flipY;
+        }
+    }
     
+}
+function onTimerCompleted(tag:String, loops:Int = 0, loopsLeft:Int = 0) {
+    if(tag == 'rewriteWindow'){
+	/*for (i in 0...4) {
+		noteTweenX('${i}mid', i + 4, FlxG.width / 3.5 + (140 * (i - 2)), 0.35, 'quadOut');
+	}*/
+
+	bfMask.alpha = 1;
+
+	FlxTween.tween(bfMask, {x: -740}, 0.5, {ease: FlxEase.quadOut});
+	FlxTween.tween(bfMask, {y: -165}, 0.5, {ease: FlxEase.quadOut});
+
+	FlxTween.tween(windowBlack, {x: 650}, 0.5, {ease: FlxEase.quadOut});
+	FlxTween.tween(windowBlack, {y: 200}, 0.5, {ease: FlxEase.quadOut});
+
+	remove(windowVessel, true);
+    rewriteWindowBox.animation.play("rewriteWindowBox", true);
+	rewriteWindowBox.alpha = 1;
+
+	FlxTween.tween(rewriteWindowBox, {x: 498}, 0.5, {ease: FlxEase.quadOut});
+	FlxTween.tween(rewriteWindowBox, {y: 133}, 0.5, {ease: FlxEase.quadOut});
+    }
+    switch(tag){
+        case "scarySonicColor0":
+        var screamer = iAmGodScreamer;
+        FlxTween.color(screamer, 0.001, screamer.color, FlxColor.WHITE);
+        runTimer("scarySonicColor1", 0.03);
+
+    case "scarySonicColor1":
+        var screamer = iAmGodScreamer;
+        FlxTween.color(screamer, 0.001, screamer.color, 0xFFBCBCBC); // light gray
+        runTimer("scarySonicColor2", 0.03);
+
+    case "scarySonicColor2":
+        var screamer = iAmGodScreamer;
+        FlxTween.color(screamer, 0.001, screamer.color, 0xFF969696); // darker gray
+        runTimer("scarySonicColor0", 0.03);
+
+    }
 }

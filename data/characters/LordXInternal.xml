@@ -1,11 +1,18 @@
 <!DOCTYPE codename-engine-character>
-<character x="10" icon="face" camx="380" y="220" scale="3" camy="-290" color="#A1A1A1" antialiasing="false" holdTime="6.1" sprite="characters/LordXInternal">
-	<anim loop="true" anim="idle" name="idle"/>
-	<anim x="14.3333333333333" y="48" anim="left" name="singLEFT"/>
-	<anim x="12" y="-11.6666666666667" anim="down" name="singDOWN"/>
-	<anim x="38" y="61" anim="up" name="singUP"/>
-	<anim x="17.6666666666667" y="18" anim="right" name="singRIGHT"/>
-	<anim x="-8" y="-9" anim="appear" name="appear"/>
-	<anim loop="true" x="63.3333333333333" y="66.6666666666667" anim="glitch" name="glitch"/>
-	<anim loop="true" x="63.3333333333333" y="66.6666666666667" anim="glitch" indices="1,1,1,1" name="glitchLoop"/>
+<character x="10" y="220" camx="10" icon="face" camy="190" scale="3" color="#A1A1A1" holdTime="6.1" antialiasing="false" sprite="characters/LordXInternal">
+	<anim loop="true" name="idle" anim="idle"/>
+
+	<anim x="14.3333333333333" name="singLEFT" anim="left" y="48"/>
+
+	<anim x="12" name="singDOWN" anim="down" y="-11.6666666666667"/>
+
+	<anim x="38" name="singUP" anim="up" y="61"/>
+
+	<anim x="17.6666666666667" name="singRIGHT" anim="right" y="18"/>
+
+	<anim x="-8" name="appear" anim="appear" y="-9"/>
+
+	<anim x="63.3333333333333" loop="true" anim="glitch" y="66.6666666666667" name="glitch"/>
+
+	<anim x="63.3333333333333" loop="true" anim="glitch" y="66.6666666666667" name="glitchLoop" indices="1,1,1,1"/>
 </character>
