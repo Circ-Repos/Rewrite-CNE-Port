@@ -21,7 +21,9 @@ import funkin.Conductor;
 import flixel.util.FlxMath;
 //Silly Stupid
 var sillyZoomBool:Bool = false;
+var flashingLights:Bool = FlxG.save.data.flashingLights;
 // Window management
+
 var shakeLevelMinVar:FlxSprite; //holy shit this is genius
 var shakeLevelMaxVar:FlxSprite; //holy shit this is genius
 var shakeLevelMin:Int = 0;
@@ -91,9 +93,9 @@ var startSong:Bool = false;
 var beat:Int = 0;
 
 // Common flags
-var downscroll:Bool = false;
+var downscroll:Bool = FlxG.save.data.downscroll;
 var lowQuality:Bool = false;
-var shadersEnabled:Bool = true;
+var shadersEnabled:Bool = FlxG.save.data.shaders;
 
 var majinVideo:FlxVideoSprite;
 var xVideo:FlxVideoSprite;
@@ -103,9 +105,9 @@ var videoArray:Array<FlxVideoSprite> = [];
 var videosToDestroy:Array<FlxVideoSprite> = [];
 
 var texture:String = "NOTE_assets";
-var camOther = new FlxCamera();
-var camVideo = new FlxCamera();
-var camNotes = new HudCamera();
+public var camOther = new FlxCamera();
+public var camVideo = new FlxCamera();
+public var camNotes = new HudCamera();
 var ogWinX:Int = 1280;
 var ogWinY:Int = 720;
 
@@ -147,6 +149,7 @@ var windowVessel:FlxSprite;
 var windowBlack:FlxSprite;
 var iAmGod:FlxSprite;
 public var camLock:Bool = false;
+
 function onPostStrumCreation() {
       for (e in strumLines.members[1]) {
             e.camera = camNotes;
@@ -206,39 +209,6 @@ function setObjectOrder(obj:String, position:Int, ?group:String = null){
     insert(obj, position);
 }
 
-/**
- * /Lua_helper.add_callback(lua, "setObjectOrder", function(obj:String, position:Int, ?group:String = null) {
-			var leObj:FlxBasic = LuaUtils.getObjectDirectly(obj);
-			if(leObj != null)
-			{
-				if(group != null)
-				{
-					var groupOrArray:Dynamic = Reflect.getProperty(LuaUtils.getTargetInstance(), group);
-					if(groupOrArray != null)
-					{
-						switch(Type.typeof(groupOrArray))
-						{
-							case TClass(Array): //Is Array
-								groupOrArray.remove(leObj);
-								groupOrArray.insert(position, leObj);
-							default: //Is Group
-								groupOrArray.remove(leObj, true);
-								groupOrArray.insert(position, leObj);
-						}
-					}
-					else luaTrace('setObjectOrder: Group $group doesn\'t exist!', false, false, FlxColor.RED);
-				}
-				else
-				{
-					var groupOrArray:Dynamic = CustomSubstate.instance != null ? CustomSubstate.instance : LuaUtils.getTargetInstance();
-					groupOrArray.remove(leObj, true);
-					groupOrArray.insert(position, leObj);
-				}
-				return;
-			}
-			luaTrace('setObjectOrder: Object $obj doesn\'t exist!', false, false, FlxColor.RED);
-		});
- */
  function create(){
         glitchShader = new CustomShader("glitch");
 
@@ -252,7 +222,7 @@ function setObjectOrder(obj:String, position:Int, ?group:String = null){
     glitchIntro.loadGraphic(Paths.image("modelSwap/0"));
     glitchIntro.antialiasing = false;
     glitchIntro.alpha = 0.001;
-    glitchIntro.setGraphicSize(Std.int(glitchIntro.width * 3.22), Std.int(glitchIntro.height * 3.22));
+    glitchIntro.setGraphicSize(glitchIntro.width * 3.22, glitchIntro.height * 3.22);
     glitchIntro.updateHitbox();
     glitchIntro.cameras = [camHUD];
     add(glitchIntro);
@@ -352,14 +322,44 @@ function snowPostCreate(){
     redClouds.antialiasing = false;
     redClouds.alpha = 0.001;
     if (shadersEnabled) {
-        redClouds.setGraphicSize(Std.int(redClouds.width * 2.0));
+        redClouds.setGraphicSize(redClouds.width * 2.0);
         redClouds.velocity.set(-750, 0);
     } else {
         redClouds.y = -400;
-        redClouds.setGraphicSize(Std.int(redClouds.width * 5.0));
+        redClouds.setGraphicSize(redClouds.width * 5.0);
         redClouds.velocity.set(-1000, 0);
     }
     add(redClouds);
+
+    // LALALA BACKDROP
+    lalalaBackground = new FlxBackdrop(Paths.getSparrowAtlas("lalalaBackground"), 0, 0, true, true);
+    lalalaBackground.antialiasing = false;
+    lalalaBackground.frames = Paths.getSparrowAtlas("lalalaBackground");
+    lalalaBackground.animation.addByPrefix("temp", "0_", 15, true);
+    lalalaBackground.animation.addByPrefix("la", "0_", 15, true);
+    lalalaBackground.animation.play("temp");
+    lalalaBackground.velocity.set(-500, 500);
+    lalalaBackground.alpha = 0.001;
+    lalalaBackground.scale.set(2, 2);
+    insert(members.indexOf(dad) + 1, lalalaBackground); // Add to stage
+
+    // TRIPPY BG
+    trippyBG = new FlxSprite(0, 0);
+    trippyBG.frames = Paths.getSparrowAtlas("trippyBG");
+    trippyBG.animation.addByPrefix("trippyBG", "trippyBG", 15, true);
+    trippyBG.animation.play("trippyBG");
+    trippyBG.antialiasing = false;
+    trippyBG.alpha = 0.001;
+
+    if (shadersEnabled) {
+        trippyBG.setPosition(100, 60);
+        trippyBG.scale.set(4.75, 4.75);
+    } else {
+        trippyBG.setPosition(-300, -160);
+        trippyBG.scale.set(8, 8);
+    }
+
+    add(trippyBG);
 
     fleshBG = new FlxSprite(0, 0);
     fleshBG.frames = Paths.getSparrowAtlas("fleshBG");
@@ -369,10 +369,10 @@ function snowPostCreate(){
     fleshBG.alpha = 0.001;
     if (shadersEnabled) {
         fleshBG.setPosition(100, 50);
-        fleshBG.setGraphicSize(Std.int(fleshBG.width * 2.7));
+        fleshBG.setGraphicSize(fleshBG.width * 2.7);
     } else {
         fleshBG.setPosition(-300, -160);
-        fleshBG.setGraphicSize(Std.int(fleshBG.width * 5));
+        fleshBG.setGraphicSize(fleshBG.width * 5);
     }
     add(fleshBG);
 
@@ -406,8 +406,8 @@ function snowPostCreate(){
     rewriteCutscene.antialiasing = false;
     rewriteCutscene.alpha = 0.001;
     rewriteCutscene.scrollFactor.set(0, 0);
-    rewriteCutscene.setGraphicSize(Std.int(rewriteCutscene.width * 3.22));
-    rewriteCutscene.cameras = [camOther];
+    rewriteCutscene.setGraphicSize(rewriteCutscene.width * 3.22);
+    rewriteCutscene.cameras = [camVideo];
     add(rewriteCutscene);
 
     rewriteStomp = new FlxSprite(0, 0);
@@ -416,7 +416,7 @@ function snowPostCreate(){
     rewriteStomp.alpha = 0.001;
     rewriteStomp.antialiasing = false;
     rewriteStomp.scrollFactor.set(0, 0);
-    rewriteStomp.setGraphicSize(Std.int(rewriteStomp.width * 3.22));
+    rewriteStomp.setGraphicSize(rewriteStomp.width * 3.22);
     rewriteStomp.cameras = [camOther];
     add(rewriteStomp);
 
@@ -428,8 +428,8 @@ function snowPostCreate(){
     rewriteCutsceneTransition.antialiasing = false;
     rewriteCutsceneTransition.alpha = 0.001;
     rewriteCutsceneTransition.scrollFactor.set(0, 0);
-    rewriteCutsceneTransition.setGraphicSize(Std.int(rewriteCutsceneTransition.width * 3.22));
-    rewriteCutsceneTransition.cameras = [camOther];
+    rewriteCutsceneTransition.setGraphicSize(rewriteCutsceneTransition.width * 3.22);
+    rewriteCutsceneTransition.cameras = [camVideo];
     add(rewriteCutsceneTransition);
 
     fusionCutsceneFade = new FlxSprite(0, 0);
@@ -448,7 +448,7 @@ function snowPostCreate(){
     welcomeBack.antialiasing = false;
     welcomeBack.alpha = 0.001;
     welcomeBack.scrollFactor.set(0, 0);
-    welcomeBack.setGraphicSize(Std.int(welcomeBack.width * 2));
+    welcomeBack.setGraphicSize(welcomeBack.width * 2);
     welcomeBack.cameras = [camOther];
     add(welcomeBack);
 
@@ -460,7 +460,7 @@ function snowPostCreate(){
     welcomeBackText.antialiasing = false;
     welcomeBackText.alpha = 0.001;
     welcomeBackText.scrollFactor.set(0, 0);
-    welcomeBackText.setGraphicSize(Std.int(welcomeBackText.width * 2));
+    welcomeBackText.setGraphicSize(welcomeBackText.width * 2);
     welcomeBackText.cameras = [camOther];
     add(welcomeBackText);
 
@@ -473,7 +473,7 @@ function snowPostCreate(){
     lordXJumpscares.antialiasing = false;
     lordXJumpscares.alpha = 0.001;
     lordXJumpscares.scrollFactor.set(0, 0);
-    lordXJumpscares.setGraphicSize(Std.int(lordXJumpscares.width * 3.22));
+    lordXJumpscares.setGraphicSize(lordXJumpscares.width * 3.22);
     lordXJumpscares.cameras = [camGame];
     add(lordXJumpscares);
 
@@ -490,7 +490,7 @@ function snowPostCreate(){
     for (i in 0...8) {
         internalBG.animation.addByPrefix(i + "", "scary" + i, 1, true);
     }
-    internalBG.setGraphicSize(Std.int(internalBG.width * 3.32));
+    internalBG.setGraphicSize(internalBG.width * 3.32);
     internalBG.scrollFactor.set(0.925, 0.925);
     internalBG.alpha = 0.001;
     internalBG.antialiasing = false;
@@ -500,7 +500,7 @@ function snowPostCreate(){
     internalGradient = new FlxSprite(0, 645).loadGraphic(Paths.image('internalGradient'));
     internalGradient.antialiasing = false;
     internalGradient.alpha = 0.001;
-    internalGradient.setGraphicSize(Std.int(internalGradient.width * 17), Std.int(internalGradient.height * 2));
+    internalGradient.setGraphicSize(internalGradient.width * 17, internalGradient.height * 2);
     internalGradient.updateHitbox();
     add(internalGradient);
 
@@ -508,12 +508,12 @@ function snowPostCreate(){
     fullScreenIntroBG.setPosition(0, 0);
     fullScreenIntroBG.antialiasing = false;
     fullScreenIntroBG.scrollFactor.set(0, 0);
-    fullScreenIntroBG.setGraphicSize(Std.int(fullScreenIntroBG.width * 3.22), Std.int(fullScreenIntroBG.height * 3.22));
+    fullScreenIntroBG.setGraphicSize(fullScreenIntroBG.width * 3.22, fullScreenIntroBG.height * 3.22);
     fullScreenIntroBG.updateHitbox();
     fullScreenIntroBG.color = 0xFF100410;
     add(fullScreenIntroBG);
-    remove(fullScreenIntroBG, true);
-    insert(0, fullScreenIntroBG);
+    setObjectOrder(fullScreenIntroBG, 0);
+
 
     fullScreenIntro = new FlxSprite(0, 0);
     fullScreenIntro.frames = Paths.getSparrowAtlas('fullScreenIntroStuff');
@@ -521,12 +521,11 @@ function snowPostCreate(){
     fullScreenIntro.antialiasing = false;
     fullScreenIntro.alpha = 0.001;
     fullScreenIntro.camera = camHUD;
-    fullScreenIntro.setGraphicSize(Std.int(fullScreenIntro.width * 3.22), Std.int(fullScreenIntro.height * 3.22));
+    fullScreenIntro.setGraphicSize(fullScreenIntro.width * 3.22, fullScreenIntro.height * 3.22);
     fullScreenIntro.updateHitbox();
     fullScreenIntro.animation.play("loop");
     add(fullScreenIntro);
-    remove(fullScreenIntro, true);
-    insert(0, fullScreenIntro);
+    setObjectOrder(fullScreenIntro, 0);
 
     fullScreenRunning = new FlxSprite(1280, 335);
     fullScreenRunning.frames = Paths.getSparrowAtlas('fullScreenIntroStuff');
@@ -538,8 +537,8 @@ function snowPostCreate(){
     fullScreenRunning.camera = camHUD;
     fullScreenRunning.animation.play("running");
     add(fullScreenRunning);
-    remove(fullScreenRunning, true);
-    insert(1, fullScreenRunning);
+    setObjectOrder(fullScreenRunning, 3);
+
 
     sa2Posing = new FlxSprite(-1280, 150);
     sa2Posing.frames = Paths.getSparrowAtlas('fullScreenIntroStuff');
@@ -596,8 +595,8 @@ function snowPostCreate(){
     pillarWipe.updateHitbox();
     pillarWipe.camera = camHUD;
     add(pillarWipe);
-    remove(pillarWipe, true);
-    insert(2, pillarWipe);
+    setObjectOrder(fullScreenRunning, 99);
+
 
     ring = new FlxSprite(0, 0);
     ring.frames = Paths.getSparrowAtlas('fullScreenIntroStuff-OLD');
@@ -648,7 +647,7 @@ function snowPostCreate(){
     lyricsPlaceholder.animation.play("LETS", true);
     lyricsPlaceholder.antialiasing = false;
     lyricsPlaceholder.alpha = 0.001;
-    lyricsPlaceholder.camera = camOther;
+    lyricsPlaceholder.camera = camHUD;
     lyricsPlaceholder.setGraphicSize(lyricsPlaceholder.width * 3.0, lyricsPlaceholder.height * 3.0);
     lyricsPlaceholder.updateHitbox();
     add(lyricsPlaceholder);
@@ -848,6 +847,69 @@ function snowPostCreate(){
     add(iAmGod);
     iAmGod.y = 535;
 
+
+    // fellaJumpscare
+    fellaJumpscare = new FlxSprite(0, 0);
+    fellaJumpscare.loadGraphic(Paths.getSparrowAtlas('fellaJumpscare'));
+    fellaJumpscare.animation.addByPrefix("temp", "rise", 30, false);
+    fellaJumpscare.animation.addByPrefix("rise", "rise", 30, false);
+    fellaJumpscare.animation.addByPrefix("loop", "loop", 30, true);
+    playAnim("fellaJumpscare", "temp");
+    fellaJumpscare.alpha = 0.001;
+    fellaJumpscare.antialiasing = false;
+    fellaJumpscare.scrollFactor.set(0, 0);
+    fellaJumpscare.cameras = [camOther];
+    fellaJumpscare.setGraphicSize(Std.int(fellaJumpscare.width * 3.22));
+    add(fellaJumpscare);
+
+    // rewriteHeadStare
+    rewriteHeadStare = new FlxSprite(0, 550);
+    rewriteHeadStare.loadGraphic(Paths.getSparrowAtlas('rewriteHeadStare'));
+    rewriteHeadStare.animation.addByPrefix("rewriteHeadStare", "0_", 20, true);
+    rewriteHeadStare.alpha = 1;
+    rewriteHeadStare.antialiasing = false;
+    rewriteHeadStare.scrollFactor.set(0, 0);
+    rewriteHeadStare.cameras = [camOther];
+    rewriteHeadStare.setGraphicSize(Std.int(rewriteHeadStare.width * 4));
+    rewriteHeadStare.updateHitbox();
+    rewriteHeadStare.screenCenter(FlxAxes.X);
+    rewriteHeadStare.offset.x = -600;
+    add(rewriteHeadStare);
+
+    // transColourFinal
+    transColourFinal = new FlxSprite(-500, -500);
+    transColourFinal.makeGraphic(2500, 2000, 0xFF131313);
+    transColourFinal.alpha = 0.001;
+    transColourFinal.scrollFactor.set(0, 0);
+    insert(members.indexOf(dad) - 1, transColourFinal); // similar to setObjectOrder
+    add(transColourFinal);
+    
+    // rewriteKYSHead
+    rewriteKYSHead = new FlxSprite(0, 0);
+    rewriteKYSHead.loadGraphic(Paths.getSparrowAtlas('characters/characters/sonicWurugashikai'));
+    rewriteKYSHead.animation.addByPrefix("rewriteKYSHead", "shootHead", 1, false);
+    rewriteKYSHead.alpha = 0.001;
+    rewriteKYSHead.antialiasing = false;
+    rewriteKYSHead.scrollFactor.set(1, 1);
+    rewriteKYSHead.setGraphicSize(Std.int(rewriteKYSHead.width * 3));
+    add(rewriteKYSHead);
+
+    // sparkles
+    sparkles = new FlxSprite(0, 0);
+    sparkles.loadGraphic(Paths.getSparrowAtlas('menus/title/sparkles'));
+    sparkles.animation.addByPrefix("sparkles", "sparkles idle", 60, true);
+    sparkles.alpha = 0.001;
+    sparkles.antialiasing = false;
+    sparkles.scrollFactor.set(0, 0);
+    sparkles.cameras = [camOther];
+    sparkles.setGraphicSize(Std.int(sparkles.width * 2.5));
+    sparkles.updateHitbox();
+    sparkles.screenCenter();
+    sparkles.offset.x = -550;
+    add(sparkles);
+
+
+
 }
 var wasFocused:Bool = true;
 function onCameraMove(event){
@@ -902,19 +964,7 @@ function postUpdate(){
             stopUpdatingDummy4 = true;
         }
     }
-    if (curStep >= 2892 && curStep < 2896) {
-        windowLock = false;
-
-        // Set window opacity (if supported)
-        if (window != null) {
-            window.opacity = 1;
-            window.title = "";
-            window.x = windowOriginX + FlxG.random.float(-500, 500);
-            window.y = windowOriginY + FlxG.random.float(-150, 150);
-        }
-
-        FlxG.autoPause = true;
-    }
+    
 
     shakeLevelMin = shakeLevelMinVar.x;
     shakeLevelMax = shakeLevelMaxVar.x;
@@ -994,11 +1044,10 @@ function destroy() {
 }
 
 var glitchIntro:FlxSprite;
-
-var glitchIntro:FlxSprite;
 var glitchFrame:Int = 1;
 function introGlitch(value1:String) {
 	if (value1 != "hide") {
+        boyfriendRing.visible = false;
 		glitchIntro.alpha = 1;
 		glitchIntro.visible = true;
 
@@ -1009,7 +1058,12 @@ function introGlitch(value1:String) {
 	} else {
 
 		glitchIntro.visible = false;
-        dad.screenCenter();
+        glitchIntro.alpha = 0.001;
+        remove(glitchIntro, true);
+        dad.visible = true;
+        dad.alpha = 1;
+        camGame.visible = true;
+        camGame.alpha = 1;
 	}
 }
 
@@ -1050,6 +1104,13 @@ function camisDied(){
     camHUD.alpha = 0;
     camOther.alpha = 0;
 }
+// Play an animation on a FlxSprite with optional force, reversed, and startFrame
+function playAnim(spriteName:String, animName:String, force:Bool = true, reversed:Bool = false, startFrame:Int = 0) {
+	var sprite = Reflect.getProperty(this, spriteName);
+	if (sprite != null && sprite.animation != null) {
+		sprite.animation.play(animName, force, reversed, startFrame);
+	}
+}
 function playVideo(vid:FlxVideoSprite, endTime:Float, strumTime:Float)
 {
     if(vid == 'lxVideo'){
@@ -1059,8 +1120,7 @@ function playVideo(vid:FlxVideoSprite, endTime:Float, strumTime:Float)
     }
     camZooming = false;
     if(vid == fusionVideo){
-        remove(vid, true);
-        insert(0, vid);
+        setObjectOrder(vid, 0);
     }
     //commento ut the thingy soi  can play
     if (vid == xVideo){
@@ -1150,8 +1210,8 @@ function changeBG(v1:String){
             stagebackMajin.alpha = 0.001;
             stagepilarsMajin.alpha = 0.001;
             stagefrontMajin.alpha = 0.001;
-            remove(boyfriend, true);
-            insert(99, boyfriend);
+            setObjectOrder(boyfriend, 99);
+
             videosToDestroy.push(majinVideo);
 
         }
@@ -1193,8 +1253,8 @@ function changeBG(v1:String){
             dad.y -= 240;
             dad.x -= 420;
             boyfriend.x -= 420;
-            remove(boyfriend, true);
-            insert(99, boyfriend);
+            setObjectOrder(boyfriend, 99);
+
             stagebackRR.alpha = 0.001;
             stagebackRR2.alpha = 0.001;
             stagebackRR3.alpha = 0.001;
@@ -1228,10 +1288,20 @@ function changeBG(v1:String){
 				stagestuffR.alpha = 1;
         }
         if(v1 == 'void'){
-            boyfriend.y += 600;
-            dad.y += 250;
-            dad.x += 600;
-            boyfriend.x += 600;
+            /*
+                            boyfriend.y += 580;
+                dad.y += 220;
+                dad.x += 580;
+                boyfriend.x += 580;*/
+            /*
+            	"boyfriend": [260, 270],
+	"girlfriend": [600, 350],
+	"opponent": [270, 170],*/
+            boyfriend.y = 270;
+            boyfriend.x = 260;
+            dad.y = 170;
+            dad.x = 270;
+        
             stageskyR.alpha = 0.001;
             stagebackR.alpha = 0.001;
             stagegroundR.alpha = 0.001;
@@ -1440,9 +1510,9 @@ function doTweenWindow(tag:String, field:String, value:Float, duration:Float, ea
                     type: tweenType
                 }, function(v:Float) FlxG.resizeWindow(FlxG.width, Std.int(v)));
             case "x":
-                FlxTween.tween(Lib.application.window, {x: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
+                FlxTween.tween(window, {x: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
             case "y":
-                FlxTween.tween(Lib.application.window, {y: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
+                FlxTween.tween(window, {y: value}, duration, {ease: FlxEase.byName(ease), type: tweenType});
         }
     }
 }
@@ -1458,17 +1528,264 @@ function doTweenStage(tag:String, field:String, value:Float, duration:Float, eas
         }
     }
 }
+
+function getObjectOrder(name:String):Int {
+    var target = Reflect.getProperty(name);
+    if (target != null && Std.isOfType(target, flixel.FlxSprite)) {
+        return target.ID;
+    }
+    return -1; // Return -1 if not found or invalid
+}
+
+
 var safteyNet2:Bool = false;
 var safteyNet4:Bool = false;
 var safetyNet3:Bool = false;
 function stepHit(step:Int){
+    var step = curStep;
+    if (curStep == 4688) {
+        remove(trippyBG, false);
+        insert(members.indexOf(redClouds) + 1, trippyBG);
+        FlxTween.tween(lalalaBackground, {alpha: 1}, 1, {ease: FlxEase.linear});
+        
+        if (flashingLights) {
+            FlxTween.tween(trippyBG, {alpha: 0.5}, 0.5, {ease: FlxEase.linear});
+        } else {
+            FlxTween.tween(trippyBG, {alpha: 0.25}, 0.5, {ease: FlxEase.linear});
+        }
+
+        if (lalalaBackground.animation != null) {
+            lalalaBackground.animation.play("la");
+        }
+    }
+
+    if (curStep == 4748) {
+        FlxTween.tween(lalalaBackground, {alpha: 0}, 0.4, {ease: FlxEase.linear});
+        FlxTween.tween(trippyBG, {alpha: 0}, 0.2, {ease: FlxEase.linear});
+    }
+
+    if(curStep == 4656){
+        remove(iAmGodScreamer, false);
+    }
+    if(curStep == 3776){
+        remove(boyfriendRing);
+        remove(ring);
+        remove(fullScreenIntroBG);
+    }
+    if(curStep >= 4176 && !safetyNetIDKANYMORE)
+    {
+        desktopRift.alpha = 0;
+        desktopRiftMask.alpha = 0;
+        blackMask.alpha = 0;
+
+        redClouds.alpha = 0;
+
+        safetyNetIDKANYMORE = true;
+    }
+
+    if(curStep == 4182)
+    {
+        boyfriend.alpha = 0;
+        remove(bfMask);
+        remove(windowBlack);
+    }
+
+    if(curStep >= 4232 && !safetyHEAD)
+    {
+        rewriteHead.alpha = 1;
+        FlxTween.tween(rewriteHead, {x: 498 - 250}, 0.75, {ease: FlxEase.linear});
+        FlxTween.tween(rewriteHead, {y: 133 - 100}, 0.3, {ease: FlxEase.quadOut});
+        FlxTween.tween(rewriteHead, {angle: -160}, 0.75, {ease: FlxEase.linear});
+
+        safetyHEAD = true;
+    }
+
+    if(curStep == 4236)
+    {
+        FlxTween.tween(rewriteHead, {y: 133 + 720}, 0.3, {ease: FlxEase.quadIn});
+    }
+	if(curStep >= 4240 && !safetyHEAD2)
+	{
+		/*for (i in 0...4)
+		{
+			noteTweenX('${i}midScroll', i + 4, FlxG.width / 2 + (140 * (i - 2)), 0.35, 'quadOut');
+		}*/
+
+		FlxTween.tween(firewall, {y: -160}, 4, {ease: FlxEase.quadInOut});
+
+		rewriteHeadMask.alpha = 1;
+		rewriteHeadCorpse.alpha = 1;
+		firewall.alpha = 1;
+
+        rewriteHeadMask.animation.play("mask", true, false, 0);
+        rewriteHeadCorpse.animation.play("corpse0", true, false, 0);
+
+		blackMask.alpha = 1;
+		redClouds.alpha = 1;
+
+		safetyHEAD2 = true;
+
+		// Warning: this step had a rare null ref crash; verify object inits before this step
+	}
+    if (curStep == 4301) {
+        blackMask.alpha = 1;
+        errorBox2.alpha = 1;
+    }
+
+    if (curStep == 4302)
+        errorBox3.alpha = 1;
+
+    if (curStep == 4303)
+        errorBox4.alpha = 1;
+
+    if (curStep >= 4304 && !safetyTrans) {
+        secondHalfStart = true;
+
+        //mindLyrics.cameras = [subtitleCam];
+        //ogLyrics.cameras = [subtitleCam];
+
+        redClouds.visible = true;
+
+        errorBox1.alpha = 0;
+        errorBox2.alpha = 0;
+        errorBox3.alpha = 0;
+        errorBox4.alpha = 0;
+
+        dad.alpha = 1;
+
+        FlxTween.tween(dad, {y: 225}, 0.5, {ease: FlxEase.sineOut});
+        FlxTween.tween(rewriteHeadCorpse, {y: 1000}, 0.3, {ease: FlxEase.quadIn});
+        FlxTween.tween(firewall, {y: 900}, 0.3, {ease: FlxEase.quadIn});
+        FlxTween.tween(rewriteHeadMask.scale, {x: 12, y: 12}, 0.4, {ease: FlxEase.quadInOut});
+
+        redClouds.velocity.x = shadersEnabled ? -2000 : -3000;
+        safetyTrans = true;
+    }
+
+    if (curStep == 4406)
+    {
+        FlxTween.tween(redClouds, {alpha: 0.5}, 0.25);
+        fleshBG.alpha = 0.001;
+    }
+
+    if (curStep == 4414)
+    {
+        FlxTween.tween(redClouds, {alpha: 0.25}, 0.25);
+        fleshBG.alpha = 0.001;
+    }
+
+    if (curStep == 4422)
+    {
+        FlxTween.tween(redClouds, {alpha: 0.0}, 0.25);
+        fleshBG.alpha = 0.001;
+    }
+
+    if (curStep == 4430)
+    {
+        //cancelTween("sonicFallDown");
+        //cancelTween("sonicFallUp");
+
+        dad.scale.set(4,4);
+        dad.y = 500;
+    }
+
+    if (curStep == 4432)
+    {
+        FlxG.camera.flash(FlxColor.RED, 0.33, true);
+        gf.alpha = 1;
+        FlxTween.tween(gf, {alpha: 0}, 1, {ease: FlxEase.quadIn});
+    }
+
+    if (curStep >= 4432 && curStep < 4512)
+    {
+        fleshBG.colorTransform.redOffset = -50;
+        fleshBG.colorTransform.greenOffset = -50;
+        fleshBG.colorTransform.blueOffset = -50;
+        fleshBG.alpha = 1;
+    }
+
+    if (curStep == 4438)
+    {
+        FlxTween.tween(redClouds, {alpha: 0.75}, 0.25);
+        fleshBG.alpha = 0.001;
+    }
+
+    if (curStep == 4494)
+    {
+        playAnim("fella1", "rise", true, false, 0);
+        fella1.alpha = 1;
+    }
+
+    if (curStep == 4498)
+    {
+        playAnim("fella2", "rise", true, false, 0);
+        fella2.alpha = 1;
+    }
+
+    if (curStep == 4502)
+    {
+        playAnim("fella3", "rise", true, false, 0);
+        fella3.alpha = 1;
+    }
+
+    if (curStep == 4506)
+    {
+        playAnim("fellaJumpscare", "rise", true, false, 0);
+        fellaJumpscare.alpha = 1;
+    }
+
+    if (curStep == 4512)
+    {
+        fella1.alpha = 0;
+        fella2.alpha = 0;
+        fella3.alpha = 0;
+        camNotes.alpha = 0;
+        playAnim("fellaJumpscare", "loop", true, false, 0);
+    }
+
+	if(curStep == 4300)
+	{
+		desktopRift.alpha = 0;
+		desktopRiftMask.alpha = 0;
+
+		//sremoveSpriteShader(dad);
+        firewall.animation.play("firewall", true, false, 0);
+        firewall.alpha = 1;
+		firewall.animation.curAnim.paused = true;
+		//playAnim("rewriteHeadCorpse", "corpseGlitch", true, false, 0);
+        rewriteHeadCorpse.animation.play("corpseGlitch", true, false, 0);
+
+		redClouds.alpha = 1;
+		redClouds.velocity.x = 0;
+
+		errorBox1.alpha = 1;
+	}
+    if(curStep == 4242)
+    {
+        rewriteWindowBox.visible = false;
+        rewriteHead.visible = false;
+    }
+    if (curStep >= 2892 && curStep < 2896) {
+        windowLock = false;
+
+        // Set window opacity (if supported)
+        if (window != null) {
+            window.opacity = 1;
+            window.title = "";
+            window.x = windowOriginX + FlxG.random.float(-500, 500);
+            window.y = windowOriginY + FlxG.random.float(-150, 150);
+        }
+
+        FlxG.autoPause = true;
+    }
+
     if(curStep == 3790){
         runTimer('glitch1', 0.05); 
     }
     if(curStep == 3837){
         runTimer('rewriteCutsceneTransition', 0.04); // the timing is very precise,,,
     }
-    switch (step) {
+    switch (curStep) {
         case 3924, 3956:
             lyricsPlaceholder.screenCenter(FlxAxes.X);
             lyricsPlaceholder.animation.play("PLAY");
@@ -1537,8 +1854,8 @@ function stepHit(step:Int){
             lyricsPlaceholder.animation.play("READY-glitch4");
 
         case 3984:
-            lyricsPlaceholder.kill();
-            lyricsPlaceholder.exists = false;
+            lyricsPlaceholder.alpha = 0;
+            lyricsPlaceholder.destroy();
     }
 
     if (curStep == 2800) {
@@ -1585,11 +1902,11 @@ function stepHit(step:Int){
     }
 
 
-    if(step == 2496){
+    if(curStep == 2496){
         stagebackLX2.alpha = 0.001;
         stagebackLX.alpha = 0.001;
     }
-    if (step == 3788){
+    if(curStep == 3788){
         stageskyR.alpha = 0.001;
         stagebackR.alpha = 0.001;
         stagegroundR.alpha = 0.001;
@@ -1600,7 +1917,7 @@ function stepHit(step:Int){
         shapes.alpha = 1;
         floor.alpha = 1;
     }
-    if(step == 2779) internalBGBop = false;
+    if(curStep == 2779) internalBGBop = false;
 
     if (curStep == 2784) {
     dad.stunned = true;
@@ -1613,7 +1930,7 @@ function stepHit(step:Int){
     camHUD.alpha = 0;
     internalShaderUpdate = false;
 
-    var illegal = new FlxSprite(270, 300);
+    illegal = new FlxSprite(270, 300);
     illegal.loadGraphic(Paths.image('illegal'));
     illegal.setGraphicSize(Std.int(illegal.width * 3.0), Std.int(illegal.height * 3.0));
     illegal.antialiasing = false;
@@ -1632,12 +1949,12 @@ function stepHit(step:Int){
     }
 
 
-    if(step == 3840){
+    if(curStep == 3840){
         stars.alpha = 0.001;
         shapes.alpha = 0.001;
         floor.alpha = 0.001;
     }
-    if (step == 4044) {
+    if(curStep == 4044) {
     //playAnim("windowVessel", "windowVessel", true, false, 0);
     windowBlack.alpha = 1;
     windowVessel.alpha = 1;
@@ -1647,7 +1964,7 @@ function stepHit(step:Int){
     boyfriend.y = 495;
     boyfriend.alpha = 1;
     }
-    if(step >= 2912 && !safetyNet2){
+    if(curStep >= 2912 && !safetyNet2){
         camGame.alpha = 1;
         camHUD.alpha = 0;
         camOther.alpha = 1;
@@ -1671,17 +1988,17 @@ function stepHit(step:Int){
         safetyNet2 = true;
         slowZoom(1.1, 10);
     }
-    if (step == 3084){
+    if(curStep == 3084){
         iAmGod.screenCenter(FlxAxes.X);
         iAmGod.y = 535; //redo cords since its made before 4:3 is on
         iAmGod.alpha = 1;
         iAmGod.animation.play("iAmGod");
     }
 
-    if (step == 3100 && iAmGod.alpha == 1){
+    if(curStep == 3100 && iAmGod.alpha == 1){
         iAmGod.alpha = 0;
     }
-    if (step == 3568) {
+    if(curStep == 3568) {
         windowLock = false;
         windowShaking = true;
 
@@ -1701,11 +2018,11 @@ function stepHit(step:Int){
         window.borderless = true;
     }
 
-    if (step == 3570) window.borderless = false;
-    if (step == 3573) window.borderless = true;
-    if (step == 3574) window.borderless = false;
+    if(curStep == 3570) window.borderless = false;
+    if(curStep == 3573) window.borderless = true;
+    if(curStep == 3574) window.borderless = false;
 
-    if (step == 3576) {
+    if(curStep == 3576) {
         trace("step 3576");
         shakeLevelMinVar.x = -50;
         shakeLevelMaxVar.x = 50;
@@ -1714,7 +2031,7 @@ function stepHit(step:Int){
         window.borderless = true;
     }
 
-    if (step == 3584) {
+    if(curStep == 3584) {
 
         trace("step 3584");
         allowWinTween = true;
@@ -1736,7 +2053,7 @@ function stepHit(step:Int){
         FlxTween.tween(shakeLevelMaxVar, {x: 0}, 0.2, {ease: FlxEase.quadOut});
     }
 
-    if (step == 3596) {
+    if(curStep == 3596) {
         trace("step 3596");
         windowShaking = false;
         //doTweenWindow('fullscreen1', 'width', maxWidth+1, 0.4,'quintIn',1);
@@ -1753,11 +2070,13 @@ function stepHit(step:Int){
         camHUD.setPosition(0,0);
         camGame.setPosition(0,0);
         rewriteStomp.screenCenter();
+        camHUD.width = camGame.width = camNotes.width = camVideo.width = 1280;
+        camHUD.height = camGame.height = camNotes.height = camVideo.height = 720;
         doTweenWindow('fullscreen3', 'x', 0, 0.4,'quintIn',1);
         doTweenWindow('fullscreen4', 'y', 0, 0.4,'quintIn',1);
     }
 
-    if (step >= 3600 && !fullscreenLagCheck1) {
+    if(curStep >= 3600 && !fullscreenLagCheck1) {
         trace("step >= 3600");
         camHUD.alpha = 0;
         fullScreenIntroBG.alpha = 1;
@@ -1775,12 +2094,12 @@ function stepHit(step:Int){
         fullscreenLagCheck1 = true;
     }
 
-    if (step >= 3656 && !fullscreenLagCheck2) {
+    if(curStep >= 3656 && !fullscreenLagCheck2) {
         FlxTween.tween(camHUD, {alpha: 1}, 0.25, {ease: FlxEase.sineInOut});
         fullscreenLagCheck2 = true;
     }
 
-    if (step >= 3660 && !fullscreenLagCheck3) {
+    if(curStep >= 3660 && !fullscreenLagCheck3) {
         fullScreenIntro.animation.play("loop");
         defaultCamZoom = 0.7;
         camGame.zoom = 0.7;
@@ -1788,36 +2107,36 @@ function stepHit(step:Int){
         fullscreenLagCheck3 = true;
     }
 
-    if (step >= 3664 && !fullscreenLagCheck4) {
+    if(curStep >= 3664 && !fullscreenLagCheck4) {
         camGame.flash(FlxColor.fromString("0xFFEEFAD5"), 0.25, false);
         FlxTween.color(fullScreenIntroBG, 0.1, fullScreenIntroBG.color, FlxColor.fromString("0xFFEEFAD5"));        
         fullScreenIntro.alpha = 1;
         fullscreenLagCheck4 = true;
     }
 
-    if (step >= 3667 && !fullscreenLagCheck5) {
+    if(curStep >= 3667 && !fullscreenLagCheck5) {
         FlxTween.tween(fullScreenRunning, {x: 500}, 2, {ease: FlxEase.quadOut});
         fullscreenLagCheck5 = true;
     }
 
-    if (step == 3692) {
+    if(curStep == 3692) {
         pillarWipe.alpha = 1;
         pillarWipe.animation.play("wipe", true);
     }
 
-    if (step == 3696) {
+    if(curStep == 3696) {
         pillarWipe.alpha = 0;
         FlxTween.tween(sa2Posing, {x: 600}, 6.75, {ease: FlxEase.linear});
         FlxTween.tween(sa2Posing2, {x: 200}, 6.75, {ease: FlxEase.linear});
     }
 
-    if (step == 3728) {
+    if(curStep == 3728) {
         FlxTween.color(fullScreenIntroBG, 0.001, fullScreenIntroBG.color, FlxColor.fromString("0xFFEEFAD5"));
         sa2PosingShadow.alpha = 1;
         sa2Posing2Shadow.alpha = 1;
     }
 
-    if (step == 3729) {
+    if(curStep == 3729) {
         FlxTween.color(fullScreenIntroBG, 1.5, fullScreenIntroBG.color, FlxColor.fromString("0xFF100410"));
         FlxTween.tween(sa2PosingShadow, {alpha: 0}, 1.5, {ease: FlxEase.quadIn});
         FlxTween.tween(sa2Posing2Shadow, {alpha: 0}, 1.5, {ease: FlxEase.quadIn});
@@ -1827,36 +2146,43 @@ function stepHit(step:Int){
 
         //cancelTween("sonicFallUp")
         //cancelTween("sonicFallDown")
-        dad.y = dad.y -900;
+        dad.y -= 900;
         safetyNet5 = true;
     }
-    if (step == 3768) {
+    if(curStep == 3768) {
         FlxTween.tween(sa2Posing, {x: 1280}, 0.25, {ease: FlxEase.quadIn});
         FlxTween.tween(sa2Posing2, {x: -1280}, 0.25, {ease: FlxEase.quadIn});
+
     }
-    if (step == 3792){
+    if(curStep == 3792){
         defaultCamZoom = 0.9;
         camGame.zoom = 0.9;
         boyfriend.alpha = 0;
         camGame.visible = true;
     }
-    if (step == 3852){
+    if(curStep == 3852){
         safteyNet3 = true;
+        dad.visible = true;
+        dad.alpha = 1;
         dad.y += 900;
         transColour.makeGraphic(2500, 2000, 0xFF131313);
         camGame.bgColor = 0xFF131313;
         transColour.alpha = 1;
     }
-    if (step == 3772) {
+    if(curStep == 3772) {
     FlxTween.tween(ring, {alpha: 1}, 0.45, {ease: FlxEase.quadInOut});
     
     boyfriendRing.alpha = 1;
+    camHUD.alpha = 1;
+    camNotes.alpha = 1;
+    camOther.alpha = 1;
+    camOther.x = 0;
+    camOther.y = 0;
     FlxTween.tween(boyfriendRing, {y: 0}, 0.45, {ease: FlxEase.quadInOut});
     }
 
     if (curStep == 4640) {
-        camHUD.alpha = 0;
-        camNotes.alpha = 0;
+
 
         var screamer = iAmGodScreamer;
         screamer.setGraphicSize(1280, 720);
@@ -1870,18 +2196,17 @@ function stepHit(step:Int){
     }
 
 
-    if (step >= 3785 && step <= 3789) {
+    if(curStep >= 3785 && step <= 3789) {
         transColour.makeGraphic(2500, 2000, FlxColor.BLACK);
         transColour.alpha = 1;
     }
 
-    if (step == 3790) {
-        new FlxTimer().start(0.05, function(tmr:FlxTimer) {
-            // Your 'glitch1' logic here
-        });
+    if(curStep == 3790) {
+        //funny i forgor
+        runTimer('glitch1', 0.05);
     }
 
-    if (step == 3792) {
+    if(curStep == 3792) {
         camNotes.y = downscroll ? -720 : 720;
 
         defaultCamZoom = 0.9;
@@ -1891,15 +2216,19 @@ function stepHit(step:Int){
 
         noteCheck = true;
         slowZoom(0.9, 0.01);
-        dad.screenCenter(FlxAxes.X);
+        camHUD.alpha = 1;
+        camNotes.alpha = 1;
+        camOther.alpha = 1;
+        camOther.x = 0;
+        camOther.y = 0;
 
     }
 
-    if (step >= 3920 && !safteyNet4){
+    if(curStep >= 3920 && !safteyNet4){
         
         lyricsPlaceholder.alpha = 1;
-        desktopRift.animation.play("desktopRift");
-        desktopRiftMask.animation.play("desktopRiftMask");
+        desktopRift.animation.play("desktopRift", false);
+        desktopRiftMask.animation.play("desktopRiftMask", false);
         desktopRift.screenCenter(FlxAxes.X);
         desktopRift.screenCenter(FlxAxes.Y);
         desktopRiftMask.screenCenter();
@@ -1921,11 +2250,11 @@ function stepHit(step:Int){
 
     }
 
-    if (step == 2527) {
+    if(curStep == 2527) {
     internalBGBop = true;
     }
 
-    if (step == 2528) {
+    if(curStep == 2528) {
         internalBG.alpha = 1;
         if (internalOverlay != null) internalOverlay.alpha = 0.7;
         internalGradient.alpha = 1;
@@ -1948,6 +2277,10 @@ function stepHit(step:Int){
     
 }
 function onTimerCompleted(tag:String, loops:Int = 0, loopsLeft:Int = 0) {
+    if (tag == "rewriteCutsceneTransition") {
+    rewriteCutsceneTransition.alpha = 1;
+    playAnim("rewriteCutsceneTransition", "rewriteCutsceneTransition", false, false, 0);
+    }
     if(tag == 'rewriteWindow'){
 	/*for (i in 0...4) {
 		noteTweenX('${i}mid', i + 4, FlxG.width / 3.5 + (140 * (i - 2)), 0.35, 'quadOut');
@@ -1955,8 +2288,8 @@ function onTimerCompleted(tag:String, loops:Int = 0, loopsLeft:Int = 0) {
 
 	bfMask.alpha = 1;
 
-	FlxTween.tween(bfMask, {x: -740}, 0.5, {ease: FlxEase.quadOut});
-	FlxTween.tween(bfMask, {y: -165}, 0.5, {ease: FlxEase.quadOut});
+	FlxTween.tween(bfMask, {x:bfMask.x -740}, 0.5, {ease: FlxEase.quadOut});
+	FlxTween.tween(bfMask, {y:bfMask.y -165}, 0.5, {ease: FlxEase.quadOut});
 
 	FlxTween.tween(windowBlack, {x: 650}, 0.5, {ease: FlxEase.quadOut});
 	FlxTween.tween(windowBlack, {y: 200}, 0.5, {ease: FlxEase.quadOut});

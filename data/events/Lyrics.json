@@ -1,0 +1,14 @@
+{
+	"params": [
+		{
+			"name": "Lyrics/Subtitles thingy",
+			"type": "String",
+			"defaultValue": " "
+		},
+		{
+			"name": "a V2 Subsitute",
+			"type": "String",
+			"defaultValue": " "
+		}
+	]
+}
